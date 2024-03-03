@@ -6,8 +6,8 @@ const fs = require(`fs`);
 const hbs = require(`hbs`);
 const bodyParser = require("body-parser");
 app.set(`view engine`, `hbs`);
-/// app.set('views', path.join(__dirname, 'views'));
-app.set("views", __dirname + "/views"); // Set the views directory
+ app.set('views', path.join(__dirname, 'views'));
+
 
 hbs.registerPartials(__dirname + `/views/partials`, (err) => {});
 app.use(express.urlencoded({ extended: true }));
