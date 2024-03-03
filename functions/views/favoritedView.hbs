@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W3 aCastro</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navButton" id="navButton" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+    <a class="navbar-brand" href="/" id="topNav">###</a>
+    <a class="navbar-brand" href="#">Overview</a>
+  </nav>
+
+  <div class="sidenav" id="mySidenav"style="display: none;">
+    <a href="#">Favorited</a>
+    <a href="#">Completed</a>
+  </div>
+
+  <script>
+    function toggleNav() {
+      let dynamicSidenavClass = document.getElementById("mySidenav");
+      dynamicSidenavClass.classList.toggle("activeSideNav");
+      dynamicSidenavClass.style.display = dynamicSidenavClass.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+
+    <div class="container">
+        <h2>Favorited</h2><br>
+        {{>pTaskFavoritedTable}}
+    </div>
+  </body>
+</html>
+<script src="https://kit.fontawesome.com/7a790d5aa6.js" crossorigin="anonymous"></script>

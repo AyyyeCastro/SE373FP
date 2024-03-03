@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <h1>Edit Employee</h1>
+    <form action="/employees/{{task._id}}" method="POST">
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" name="taskName" value="{{task.taskName}}"><br>
+        <label for="taskDetails">Task Details:</label>
+
+        <input type="text" id="taskDetails" name="taskDetails" value="{{task.taskDetails}}"><br>
+        <label for="department">Department:</label>
+
+        <input type="text" id="taskDueDate" name="taskDueDate" value="{{task.taskDueDate}}"><br>
+        <label for="taskDueDate">Due Date:</label>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

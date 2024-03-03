@@ -1,0 +1,101 @@
+<div class="pTaskForm">
+  <form action="/taskView" method="post">
+    <div class="formParent">
+      <div class="taskName">
+        <input
+          type="text"
+          id="taskName"
+          name="taskName"
+          required
+          placeholder="Task Name"
+        />
+      </div>
+      <div class="taskDetails">
+        <input
+          type="text"
+          id="taskDetails"
+          name="taskDetails"
+          required
+          placeholder="Details"
+        />
+      </div>
+      <input
+        type="hidden"
+        id="taskComplete"
+        name="taskComplete"
+        required
+        value="no"
+      />
+      <input
+        type="hidden"
+        id="taskFavorite"
+        name="taskFavorite"
+        required
+        value="no"
+      />
+      <div class="taskDueDate">
+        <input type="date" id="taskDueDate" name="taskDueDate" required />
+      </div>
+    </div>
+
+   <button
+        type="submit"
+        value=""
+        class="taskSubmit"
+    > <i class="fa-solid fa-plus"></i></button>
+
+  </form>
+</div>
+
+<script>const formParent = document.querySelector('.formParent');
+
+function activateBorderAnimation() {
+  formParent.classList.add('focused');
+
+  // Create an Anime.js animation for border color change and animation
+  const animation = anime({
+    targets: formParent.style,
+    duration: 1500, // adjust duration as needed
+    easing: 'easeInOutSine', // adjust easing as needed
+    loop: true,
+    properties: [
+      { borderColor: ['#f6f6f6', '#5182EE', '#D2667A'] }, // Transition between border colors
+    ],
+  });
+}
+
+function deactivateBorderAnimation() {
+  formParent.classList.remove('focused');
+  animation.pause(); // Pause animation when focus is lost
+}
+
+document.getElementById('taskName').addEventListener('focus', activateBorderAnimation);
+document.getElementById('taskDetails').addEventListener('focus', activateBorderAnimation);
+
+document.getElementById('taskName').addEventListener('blur', deactivateBorderAnimation);
+document.getElementById('taskDetails').addEventListener('blur', deactivateBorderAnimation);
+// ... (rest of your JavaScript remains unchanged)
+  
+  ////////////////////
+    document.getElementById('taskDueDate').addEventListener('click', function(e) {
+    this.showPicker();
+  });
+  const form = document.getElementById('taskForm');
+  form.addEventListener('submit', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // GSAP animation on submit
+    gsap.to(form, {
+      duration: 3.7,
+      ease: "power1.inOut",
+      x: "10px",
+      repeat: 2,
+      yoyo: true
+    })
+    .then(function() {
+      // Submit the form after animation completes
+      form.submit();
+    });
+  });
+</script>
