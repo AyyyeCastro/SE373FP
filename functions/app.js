@@ -140,14 +140,14 @@ app.post("/taskView/:id/favorite", async (req, res) => {
 //////////////////////////////
 
 // Default local port for local testing
-const localPort = 86;
+//const localPort = 86;
 
 // env var for netlify port
-// port = process.env.PORT // || localPort;
+port = process.env.PORT // || localPort;
 
 // run the server on netlify or locally (node app.js)
-app.listen(localPort, () => {
-  console.log(`Server Running at http://localhost:${localPort}`);
+app.listen(port, () => {
+  console.log(`Server Running at http://localhost:${port}`);
 });
 
 // Export the Express app as a serverless function
