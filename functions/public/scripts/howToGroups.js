@@ -17,16 +17,16 @@
           }
       })
 
-      gsap.to('.fancyNav', {
-          fontSize: '2.5rem',
-          top: '4rem',
-          scrollTrigger: {
-              trigger: '.fancyNav',
-              start: 'top top',
-              end: 1500,
-              scrub: 0.5,
-          }
-      })
+    //   gsap.to('.fancyNav', {
+    //       fontSize: '2.5rem',
+    //       top: '4rem',
+    //       scrollTrigger: {
+    //           trigger: '.fancyNav',
+    //           start: 'top top',
+    //           end: 1500,
+    //           scrub: 0.5,
+    //       }
+    //   })
 
       gsap.to('#blueLine', {
           height: '10rem',

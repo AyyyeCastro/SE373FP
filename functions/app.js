@@ -6,9 +6,8 @@ const fs = require(`fs`);
 const hbs = require(`hbs`);
 const bodyParser = require("body-parser");
 app.set(`view engine`, `hbs`);
- app.set('views', path.join(__dirname, 'views'));
-
-
+/// app.set('views', path.join(__dirname, 'views'));
+app.set("views", __dirname + "/views"); // Set the views directory
 hbs.registerPartials(__dirname + `/views/partials`, (err) => {});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -44,15 +43,15 @@ app.set("view engine", "hbs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
-// 
+// Routes (was quite confusing and gave me headaches, but it works now and I wont question how!)
 app.get("/", (req, res) => {
   res.render("index");
 });
 app.get('/howTo', (req, res) => {
-  res.render('howTo'); 
+  res.render('howTo'); // Render the howTo.hbs page
 });
 app.get('/aboutTraket', (req, res) => {
-  res.render('aboutTraket'); 
+  res.render('aboutTraket'); // Render the howTo.hbs page
 });
 
 
@@ -125,6 +124,7 @@ app.post("/taskView/:id/complete", async (req, res) => {
     res.redirect("/taskView");
   } catch (err) {
     console.error(err);
+    // Handle errors appropriately (e.g., display error message to user)
   }
 });
 app.post("/taskView/:id/favorite", async (req, res) => {
@@ -135,20 +135,21 @@ app.post("/taskView/:id/favorite", async (req, res) => {
     res.redirect("/taskView");
   } catch (err) {
     console.error(err);
+    // Handle errors appropriately (e.g., display error message to user)
   }
 });
 
 //////////////////////////////
 
 // Default local port for local testing
-//const localPort = 86;
+const localPort = 86;
 
 // env var for netlify port
-port = process.env.PORT // || localPort;
+// port = process.env.PORT // || localPort;
 
 // run the server on netlify or locally (node app.js)
-app.listen(port, () => {
-  console.log(`Server Running at http://localhost:${port}`);
+app.listen(localPort, () => {
+  console.log(`Server Running at http://localhost:${localPort}`);
 });
 
 // Export the Express app as a serverless function

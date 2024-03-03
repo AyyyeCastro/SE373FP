@@ -30,923 +30,27 @@
          href="https://fonts.googleapis.com/css2?family=Anta&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
          rel="stylesheet"
          />
-      <link rel="stylesheet" type="text/css" href="/styles.css" />
-      <link rel="stylesheet" type="text/css" href="/stylesHowTo.css" />
+      <link rel="stylesheet" type="text/css" href="/functions/public/styles.css" />
+      <link rel="stylesheet" type="text/css" href="/functions/public/stylesHowTo.css" />
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>W3 aCastro</title>
-      <style>
-          @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-/* This allows responsive font scaling to be easily manipulated with a default set (mobile) and one Desktop scaling w/ Media query. */
-:root {
-  --ff-body: "Bebas Neue", sans-serif;
-  /* Clamp prevents browsers from over/under sizing from scaling. 
-  clam(min rem, set vw + amount, max rem) */
-  --fs-xl: clamp(3rem, 16vw + 1rem, 10rem); /* Header font */
-  --fs-lg: 1.8rem; /* Body title font */
-  --fs-md: 1.4rem; /* Main body font */
-  --fs-sm: 1.4rem; /* Subtitle font */
-}
-/* Min width has a "mobile first" mentality */
-@media (min-width: 40em) {
-  :root {
-    --fs-xl: clamp(6rem, 16vw + 1rem, 10rem); /* Used for Welcome screen */
-    --fs-lg: 2.1rem; /* Body title font */
-    --fs-md: 1.2rem; /* Main body font */
-    --fs-sm: 1.5rem; /* Subtitle font */
-  }
-}
-.btnAction{
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-body, html {
-  color: #1f1f1f;
-  background-color: #FCFCFC;
-  margin: 0;
-  padding: 0;
-}          
-h2{
-  color: #C4C7C5;
-}
-
-/* Navbar styles */
-.navbar {
-  background: linear-gradient(65deg, #5182EE,#A071C3, #D2667A);
-  color: white;
-  padding: 10px 10px;
-}
-
-.navbar-brand {
-  color: white;
-  text-decoration: none;
-}
-
-/* Container styles */
-.container {
-  max-width: 1200px; /* Max width of the main container */
-  margin: auto; /* Center the container */
-  padding: 20px;
-}
-
-/* Table styles */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table th, .table td {
-  padding: 20px;
-  text-align: left;
-}
-/* Form styles */
-.pTaskForm {
-  margin-top: 20px;
-}
-
-.formParent, .submit {
-  display: flex;
-  flex-direction: column; 
-}
-.taskSubmit{
-  margin-top: 10px;
-}
-.formParent{
-  /* border: 1px solid gray; */
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #f6f6f6;
-  box-shadow: 10px 15px 20px #dbdbdb;
-}
-.taskName, .taskDetails {
-  width: 100%; /* Make inputs full width */
-}
-.taskDetails{
-  border-top: 2px solid #5182EE;
-}
-.taskDetails input{
-  background-color: #f6f6f6;
-}
-input[type="text"], input[type="date"] {
-  padding: 10px;
-  border-radius: 4px;
-  width: 100%;
-  border: 0px;
-}
-input:focus {
-  outline: none; 
-}
-.taskSubmit {
-  background: linear-gradient(95deg, #5182EE, #D2667A);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .formParent, .due-date-submit {
-    flex-direction: column;
-  }
-
-  input[type="text"], input[type="date"], input[type="submit"] {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}
-
-
-/* Hide the default date input styling */
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="date"]::-webkit-datetime-edit, 
-input[type="date"]::-webkit-inner-spin-button, 
-input[type="date"]::-webkit-clear-button {
-    display: none;
-    -webkit-appearance: none;
-}
-
-/* Custom calendar icon */
-input[type="date"] {
-
-  width: 50px; 
-  padding: 5px 10px;
-  content: url('https://cdn-icons-png.flaticon.com/512/5650/5650277.png');
-  cursor: pointer;
-  float: right;
-  background-color: #f6f6f6;
-}
-
-
-/* Style for the hidden details row */
-.hidden-details {
-  display: none;
-  opacity: 0; 
-  height: 0; 
-  pointer-events: none;
-}
-
-.table{ 
-  background-color: white;
-}
-/* Additional styles for hover effect on task row */
-.table tbody tr:hover {
-  background-color: #f6f6f6; 
-}
-
-.table tbody tr:not(:last-child) {
-  border-bottom: 25px solid #DDE3EA;
-  border-radius: 20px;
-}
-
-/* Ensure the hidden details row has no border */
-.table tbody .hidden-details {
-  border-bottom: none;
-}
-
-/* sidenav styles */
-.activeSideNav {
-  height: 10vh; 
-  position: absolute; 
-  left: 0px; 
-  width: 200px; 
-  box-shadow: 5px 10px 10px #9a9a9a;
-  overflow-x: hidden; 
-  border-bottom-right-radius: 15px;
-  padding: 10px;
-  background: linear-gradient(#FCFCFC, #FCFCFC) padding-box,
-  linear-gradient(to left, #5182EE, #D2667A) border-box;
-  border-right: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-}
-
-.activeSideNav a {
-  color: #1f1f1f;
-  padding: 20px 16px;
-  display: block;
-  text-align: left;
-  font-size: 18px;
-}
-
-.activeSideNav a:hover {
-  background-color: #ddd; 
-}
-
-.activeSideNav a {
-  padding: 10px 20px; 
-}
-
-
-.formParent.focused {
-  border: 3px solid transparent;
-  box-shadow: 10px 15px 20px #dbdbdb;
-  background: linear-gradient(#f6f6f6, #f6f6f6) padding-box,
-  linear-gradient(to right, #5182EE, #D2667A) border-box;
-  border: 1px solid transparent;
-}
-
-
-
-/* for index.HBS */
-.myNavBar {
-width: 100%; 
-height: 15px; 
-margin: 0; 
-padding: 0; 
-z-index: 1; 
-font-family: 'Bebas Neue';
-font-size: var(--fs-lg);
-}
-.myNavBar a{
-  margin: 0 10px;
-  text-decoration: none;
-  color: black;  
-  text-decoration: overline;
-  text-decoration: underline;
-}
-.myNavBar a:hover{
-  color: #444;  
-}
-
-#welcomeContainer{
-  height: 10vh;
-}
-#welcomeH1 {
-  z-index: 1;
-  font-size: var(--fs-xl);
-  text-transform: uppercase;
-  font-family: 'Bebas Neue';
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  overflow: hidden;
-}
-#parentContainer {
-  height: 90vh;
-  position: relative;
-  overflow: hidden;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-#femaleBlueJacketWelcomeContainerImage {
-  position: absolute;
-  top: 40%;
-  right: 2%;
-  width: 820px;
-  height: 900px; 
-  object-fit:cover; 
-  object-position: top center;
-  transform: scaleX(-1); /* flip vertically */
-}
-
-
-#malePhoneWelcomeContainerImage {
-  position: absolute;
-  top: 52%;
-  left: 2%; 
-  width: 550px;
-  height: 700px; 
-  object-fit:cover; 
-  object-position: top center;
-}
-
-
-.char {
-  transform: translateY(115px);
-  transition: transform .5s;
-}
-#emptyTopSecondContainer, #emptyBottomSecondContainer{
-height: 5vh;
-background: linear-gradient(90deg,#EBD2BA, #2742FF, #69A2AE, #FFA9C4) padding-box,
-linear-gradient(to right, #A071C3, #D2667A) border-box;
-padding: 15px;
-}
-#emptyTopSecondContainer{
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-#emptyBottomSecondContainer{
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-#secondContainer{
-  align-items: center;
-  text-align: center;
-  height: 5vh;
-  overflow: hidden;
-  background: linear-gradient(90deg,#EBD2BA, #2742FF, #69A2AE, #FFA9C4) padding-box,
-  linear-gradient(to right, #A071C3, #D2667A) border-box;
-  padding: 15px;
-}
-#welcomeH2{
-  font-family: 'Bebas Neue';
-  color: white;
-  margin: 0;
-  line-height: 0.8;
-}
-#thirdParentContainer{
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  background-color: #F7E1C7;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-#thirdContainer{
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 15px;
-  overflow: hidden;
-/* darker ver: EBD2BA */
-  background-color: #F7E1C7;
-}
-#row2ImageMaleOTG {
-  position: absolute;
-  top: 27%;
-  right:5%; 
-  z-index: 1; /* To ensure the image is on top of other elements */
-  width: 550px;
-  height: 1050px; 
-  object-fit:cover; 
-  object-position: top center;
-}
-#row2ImageArrow {
-  position: absolute;
-  top: 30%;
-  right: 20%;
-  z-index: 1; /* the image is on top of other elements */
-  width: 450px;
-  height: 170px; 
-  object-fit:fill; 
-  object-position: top center;
-}
-#taskRow{
-
-}
-#tasksH1{
-
-}
-#taskImgCol{
-  margin-top: 15px;
-}
-#taskImage{
-  border: 7px solid #EBD2BA;
-  border-radius: 7px;
-}
-
-
-/* Incredibly important for animation relativity between the keyFeatures slide and the image zoom animation. The VH Relativity is no longer accurate due to width animations. */
-.fixVHRelativity{
-  height: 50vh;
-  background-color: #000000;
-}
-.fixVHRelativityP2{
-  height: 50vh;
-  background-color: #D2667A;
-}
-
-/********************************/
-/********************************/
-
-.zoom {
-  position: sticky;
-  top: 20vh;
-  will-change: transform;
-  width: 100%;
-}
-
-.bottom {
-  height: 10vh;
-}
-
-.top {
-  height: 10vh;
-  background-color: #ffffff;
-}
-
-.wrap {
-  height: 100vh;
-}
-/********************************/
-
-.fancyNav {
-  font-size: var(--fs-xl);
-  position: fixed;
-  z-index: 10;
-  top: 15%;
-  left: 4rem;
-  line-height: 0.9;
-}
-.fancyNav a{
-color: #1f1f1f;
-text-decoration: underline;
-}
-.fancyNav a:hover{
-color: #444;
-}
-
-.intentionallyEmpty4{
-
-}
-
-/*********************/
-/********************************/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap');
-
-.wrapper {
-   overflow-x: hidden;
-   position: relative;
-}
-* {
-   box-sizing: border-box;
-}
-
-svg {
-   position: absolute;
-   top: 12em;
-   left: 10vw;
-   width: 50vw;
-
-   .mask {
-       width: 0;
-   }
-}
-
-.advContainer {
- border: 10px solid red;
-   display: flex;
-   width: 300vw;
-   .col {
-       display: flex;
-       gap: 3em;
-       
-       p {
-           font-size: .8rem;
-       }
-   }
-
-   .pageGroup {
-       width: 100vw;
-       padding: 20vw 10vw;
-
-       h1 {
-           font-size: 3rem;
-           margin: 0;
-       }
-
-       p {
-           font-size: 1.2rem;
-           width: 50vw;
-       }
-
-       ul {
-           list-style-type: none;
-           display: flex;
-           gap: 3em;
-           width: 100%;
-           height: 300px;
-           padding: 0;
-
-           li {
-               background: white;
-               border-radius: .3em;
-               flex-grow: 1;
-           }
-       }
-
-   }
-}
-section {
-height: 100vh;
-
-}
-
-
-
-
-
-/****************************************/
-
-.verticalBody {
-z-index: 0;
-background-color: #5581EB;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-position: relative;
-margin: 0;
-overflow-x: hidden;
-}
-
-
-.flexible {
-display: flex;
-}
-
-.flexible.rowVerticalGroup {
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-}
-
-.flexible.columnVerticleGroup {
-flex-direction: column;
-align-items: flex-start;
-justify-content: center;
-}
-
-
-.verticalP {
-margin: 0;
-font-size: 18px;
-font-weight: 200;
-color: white;
-}
-
-.verticalBG {
-height: 100%;
-width: 0%;
-position: absolute;
-right: 0;
-top: 0;
-background-color: #FFD787;
-z-index: -1;
-
-}
-
-.verticalH1 {
-font-size: 10vw;
-position: absolute;
-top: calc(100vh - 50vw);
-font-weight: 800;
-left: 20px;
-line-height: 1;
-letter-spacing: -5px;
-color: white;
-}
-
-.verticalH2 {
-font-size: 40px;
-line-height: 1;
-color: white;
-}
-
-#justOneClickParent {
-width: 100%;
-height: 120vh;
-}
-
-#shareParent {
-width: 100%;
-height: 120vh;
-}
-
-.sharePromo,
-.reviewsPromo {
-width: 30%;
-gap: 40px;
-padding: 1%;
-}
-
-#reviewsParent {
-width: 100%;
-height: 120vh;
-}
-
-#endPageParent {
-height: 120vh;
-justify-content: flex-end !important;
-align-items: center !important;
-margin-bottom: 50px;
-}
-
-
-
-.clickCharGroup {
-background: linear-gradient(75deg,#FFD787, #2742FF, #D2667A);
-padding: 15px;
-display: inline-block;
-letter-spacing: -2vw;
-transition: transform 0.2s;
-}
-
-@keyframes pressDown {
-0%,
-100% {
-  transform: translateY(0);
-}
-50% {
-  transform: translateY(10px);
-}
-}
-
-@media screen and (max-width: 1000px) {
-.canvas-cont {
-  width: 200vw;
-  transform: scale(0.5);
-  left: auto;
-  top: 25vh;
-}
-
-.verticalH1 {
-  top: 20vw;
-  font-size: 15vw;
-}
-
-.sharePromo,
-.reviewsPromo {
-  width: 100%;
-}
-
-.verticalH2 {
-  font-size: 5vw;
-}
-}
-#justOneClickParentMaleComputerImage{
-position: relative;
-right: -40%;
-}
-#shareGroupConversationImage{
-position: relative;
-right: -10%;
-}
-#gpDownloadImage{
-top: 40%;
-position: relative;
-right: -50%;
-width: 50%;
-}
-#appleDownloadImage{
-top: 50%;
-position: relative;
-right: 50%;
-width: 50%;
-}
-#reviewsElderlyImage, #reviewsFemaleGroupImage, #appleDownloadImage, #gpDownloadImage, #shareGroupConversationImage, #justOneClickParentMaleComputerImage{
-z-index: -1;
-}
-
-
-/***************************/
-#circleFillParent {
-width: 200px;
-height: 200px;
-margin: 50px auto;
-border-radius: 50%;
-background-color: #FFD787;
-position: relative; /* Needed for scrollTrigger */
-}
-
-#circleFill {
-width: 100%;
-height: 100%;
-border-radius: 50%;
-position: absolute; /* Needed for scrollTrigger */
-top: 0;
-left: 0;
-background-color: #5182EE;
-}
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-.howToBody *, *::before , *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.howToBody {
-    min-height: 100vh;
-    font-size: 16px;
-    line-height: 1.3;
-    font-family: 'Bebas Neue', cursive;
-    overflow: hidden;
-}
-
-.parentContainerHowTo {
-    width: 400%;
-    height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.fancyNav {
-    font-size: 8rem;
-    position: fixed;
-    z-index: 10;
-    top: 15%;
-    left: 4rem;
-    line-height: 0.9;
-}
-.fancyNav a{
-   color: #1f1f1f;
-   text-decoration: underline;
-}
-.fancyNav a:hover{
-   color: #444;
-}
-
-#blueLine {
-    background-color: #5182EE;
-    height: 1rem;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-}
-
-.howToGroup {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-.howToSection.character::before {
-    content: '';
-    width: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-}
-
-.intentionallyEmpty {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: translateX(-100%);
-}
-.intentionallyEmpty2 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: translateY(+50%);
-}
-.intentionallyEmpty3 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: translateY(-50%);
-}
-
-
-.lessonStart::before, .lessonStart .intentionallyEmpty {
-    background-color: #5182EE;
-}
-
-.keyFeatures::before, .keyFeatures .intentionallyEmpty {
-    background-color: #EBD2BA;
-}
-
-
-.digitalDepth::before, .digitalDepth .intentionallyEmpty2 {
-    background-color: #000000;
-}
-.digitalDepth::before, .digitalDepth .intentionallyEmpty3 {
-    background-color: #4444;
-}
-
-
-.leftSideText {
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-    width: 30%;
-    font-weight: 400;
-    color: #444;
-    font-family: monospace;
-    transform: translate(100%, 100%);
-}
-.leftSideTextDigitalDepth {
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-    width: 30%;
-    font-weight: 400;
-    color: #EBD2BA;
-    font-family: monospace;
-    transform: translate(100%, 100%);
-}
-
-.character img {
-    position: relative;
-    z-index: 10;
-    height: 50vh;
-    width: auto;
-    transform: translateY(-100%);
-}
-
-.howToGroupBigText {
-    font-size: 25rem;
-    width: 100%;
-    text-align: center;
-    color: #D2667A;
-    position: absolute;
-    top: 20%;
-    left: 0;
-    transform: translateY(100%);
-    font-weight: 700;
-}
-
-.quickStatement {
-    position: absolute;
-    top: 4rem;
-    right: 4rem;
-    font-size: 3rem;
-    text-align: right;
-    transform: translateY(-200%);
-}
-
-.quickStatement span {
-    display: block;
-    font-size: 70%;
-    color: #fff;
-}
-.quickStatementDigitalDepth {
-    position: absolute;
-    top: 4rem;
-    right: 4rem;
-    font-size: 3rem;
-    text-align: right;
-    transform: translateY(-200%);
-}
-
-.quickStatementDigitalDepth span {
-    display: block;
-    font-size: 70%;
-    color: #fff;
-}
-
-.rightSideText {
-    position: absolute;
-    bottom: 4rem;
-    right: 4rem;
-    font-size: 3rem;
-    width: 30%;
-    text-align: right;
-    transform: translateY(200%);
-}
-
-.rightSideText::before, .rightSideText::after {
-    content: '';
-    color: #fff;
-}
-.rightSideTextDigitalDepth {
-    position: absolute;
-    bottom: 4rem;
-    right: 4rem;
-    font-size: 3rem;
-    width: 30%;
-    text-align: right;
-    transform: translateY(200%);
-    color: #EBD2BA;
-}
-
-.rightSideTextDigitalDepth::before, .rightSideTextDigitalDepth::after {
-    content: '';
-    color: #fff;
-}
-
-      </style>
    </head>
    <body>
 
 
 <div class="container-fluid d-flex flex-column" id="parentContainer">
    <nav class="myNavBar">
-   <a class="" href="/" id="topNav">Home</a>
-   <a class="" href="/taskView">Task List</a>
-   <a class="" href="/howTo">How To</a>
+   <a class="" href="#" id="topNav">Home</a>
+   <a class="" href="#">Task List</a>
+   <a class="" href="#">How To</a>
 </nav>   
    <spline-viewer  url="https://prod.spline.design/1gFB4IEi0GX4ryhE/scene.splinecode" style="position: absolute; top: 0; left: 0; height: 100vh; width: 100vw;"></spline-viewer>
   <div class="container-fluid d-flex justify-content-center align-items-center h-100">
     <h1 id="welcomeH1">Traket</h1>
-     <img src="/femaleRedShirt.png" alt="Welcome container image" id="femaleBlueJacketWelcomeContainerImage">
-      <img src="/maleTanSsitting.png" alt="Welcome container image" id="malePhoneWelcomeContainerImage">
+     <img src="/functions/public/femaleRedShirt.png" alt="Welcome container image" id="femaleBlueJacketWelcomeContainerImage">
+      <img src="/functions/public/maleTanSsitting.png" alt="Welcome container image" id="malePhoneWelcomeContainerImage">
   </div>
 </div>
       <!-- Traket ad info --> <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
@@ -963,7 +67,7 @@ background-color: #5182EE;
                <div class="col-md-3"></div>
                <div class="col-md-6 align-self-center" id="taskImgCol">
                   <img
-                     src="/taskImg.png"
+                     src="/functions/public/taskImg.png"
                      alt="taskImage.png"
                      id="taskImage"
                      style="width: 100%;"
@@ -978,7 +82,7 @@ background-color: #5182EE;
                <div class="col-lg-1"></div>
                <div class="col-lg-3 align-self-center" id="taskImgCol">
                   <img
-                     src="/alarmClocks.png"
+                     src="/functions/public/alarmClocks.png"
                      alt="taskImage.png"
                      id="taskImage"
                      />
@@ -986,8 +90,8 @@ background-color: #5182EE;
                <div class="col-lg-4 align-self-center">
                   <h1 id="statement2H1">Never miss an event again.</h1>
                   <i>Note: this a mock feature.</i>
-                  <img src="/swirlyArrowLeft.png" alt="Welcome container image" id="row2ImageArrow">
-                  <img src="/maleOTG.png" alt="Welcome container image" id="row2ImageMaleOTG">
+                  <img src="/functions/public/swirlyArrowLeft.png" alt="Welcome container image" id="row2ImageArrow">
+                  <img src="/functions/public/maleOTG.png" alt="Welcome container image" id="row2ImageMaleOTG">
                </div>
             </div>
          </div>
@@ -1008,36 +112,37 @@ background-color: #5182EE;
             </div>
             AWAY.
           </h1>
-          <img src="/maleComputer.png" id="justOneClickParentMaleComputerImage">
+          <img src="/functions/public/maleComputer.png" id="justOneClickParentMaleComputerImage">
         </div>
 
         <div id="shareParent" class="contianer-fluid flexible rowVerticalGroup">
-          <div><img src="/groupConversation.png" id="shareGroupConversationImage"></div>
+          <div><img src="/functions/public/groupConversation.png" id="shareGroupConversationImage"></div>
           <div class="sharePromo flexible columnVerticleGroup">
             <h2 class="verticalH2">SHARE YOUR LISTS</h2>
-            <p class="verticalP">Easily share your lists with friends. Invite them as contributors or just viewers!</p>
+            <h2 class="verticalH2">JAY, THIS WEBSITE IS NOT DONE.</h2>
           </div>
         </div>
 
         <div id="reviewsParent" class="contianer-fluid flexible rowVerticalGroup">
           <div class="reviewsPromo flexible columnVerticleGroup">
             <h2 class="verticalH2">PEOPLE LOVE IT</h2>
-            <p class="verticalP">It's all yours! Change the colors as you like. Make them purple, green, red, anything.</p>
+            <h2 class="verticalH2">JAY, THIS WEBSITE IS NOT DONE.</h2>
           </div>
-          <div><img src="/maleElderlyPhone.png" id=""></div>
-          <div><img src="/groupFemaleTalking.png" id=""></div>
+          <div><img src="/functions/public/maleElderlyPhone.png" id=""></div>
+          <div><img src="/functions/public/groupFemaleTalking.png" id=""></div>
         </div>
 
         <div id="endPageParent" class="contianer-fluid flexible columnVerticleGroup">
-            <img src="/appleDownload.png" id="appleDownloadImage">
-          <img src="/gpDOwnload.png" id="gpDownloadImage">
-          <div><img src="/neutralWalkingPhone.png" id=""></div>
+            <img src="/functions/public/appleDownload.png" id="appleDownloadImage">
+          <img src="/functions/public/gpDOwnload.png" id="gpDownloadImage">
+          <div><img src="/functions/public/neutralWalkingPhone.png" id=""></div>
           <h2 class="verticalH2">GET THE APP TODAY</h2>
           <h2 class="verticalH2">TRAKET</h2>
         </div>
       </div>
       <!-- -->
     <div class="container-fluid">
+      <h1>keep scrolling -- website still not done</h1>
       <div id="circleFillParent">
         <div id="circleFill"></div>
       </div>
@@ -1046,19 +151,12 @@ background-color: #5182EE;
       <!--HowtoBoyd-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
       <div class="howToBody">
       <div class="parentContainerHowTo">
-         <div class="fancyNav">
-            <h1>
-               <a class="howToNav" href="/" id="topNav">Home</a><br/>
-               <a class="howToNav" href="/taskView">Task List</a><br/>         
-               <a class="howToNav" href="/howTo">How To</a>
-            </h1>
-         </div>
          <div class="intro howToGroup">
             <div id="blueLine"></div>
          </div>
-         <div class="lessonStart character howToGroup">
+         <div class="lessonStart character howToGroup" id="lessonStartAnchor">
             <div class="intentionallyEmpty"></div>
-            <img src="/femaleOTG.png" alt=""><span class="howToGroupBigText">GSAP</span>
+            <img src="/functions/public/femaleOTG.png" alt=""><span class="howToGroupBigText">GSAP</span>
             <div class="leftSideText">
                This code animates an element with the class ".box" over 2 seconds.
                It moves the element 200 pixels to the right and 100 pixels down.
@@ -1069,9 +167,9 @@ background-color: #5182EE;
                gsap.to(".box", { duration: 2, x: 200, y: 100, ease: "bounce" });
             </div>
          </div>
-         <div class="keyFeatures character howToGroup">
+         <div class="keyFeatures character howToGroup" id="keyFeaturesAnchor">
             <div class="intentionallyEmpty"></div>
-            <img src="/maleLookingAtPhone.png" alt=""><span class="howToGroupBigText">KEY FEATURES</span>
+            <img src="/functions/public/maleLookingAtPhone.png" alt=""><span class="howToGroupBigText">KEY FEATURES</span>
             <div class="leftSideText">
                <ol>
                   <Li>A <b>plugin</b> for GSAP. Assigns elements of the HTML to trigger the animation.</Li>
@@ -1082,20 +180,20 @@ background-color: #5182EE;
             <div class="quickStatement"><span>Properties and</span>Plugins</div>
             <div class="rightSideText"> ScrollTrigger<br>Container Animation<br>Scrub</div>
          </div>
-         <div class="digitalDepth character howToGroup">
+         <div class="digitalDepth character howToGroup" id="digitalDepthAnchor">
             <div class="intentionallyEmpty2"></div>
             <div class="intentionallyEmpty3"></div>
-            <img src="/femaleComputer.png" alt=""><span class="howToGroupBigText">DIGITAL DEPTH</span>
+            <img src="/functions/public/femaleComputer.png" alt=""><span class="howToGroupBigText">DIGITAL DEPTH</span>
             <div class="leftSideTextDigitalDepth">
                <ol>
-                  <Li>A <b>plugin</b> for GSAP. Assigns elements of the HTML to trigger the animation.</Li>
-                  <Li>A <b>property</b> of the Scroll Trigger plugin. Synchronizes all of the children in the container to move with the parent container.</Li>
-                  <Li>Another <b>property</b> of the Scroll Trigger plugin. Correlates animation speed with the scroll speed.</Li>
+                  <Li>A <b>plugin</b> this is some mock words to show some blah blah blah blah blah</Li>
+                  <Li>A <b>property</b> this is some mock words to show some blah blah blah blah blah</Li>
+                  <Li>Another <b>property</b> this is some mock words to show some blah blah blah blah blah</Li>
                </oL>
             </div>
-            <div class="quickStatementDigitalDepth"><span>Properties and</span>Plugins</div>
+            <div class="quickStatementDigitalDepth"><span>Depth in a 2D</span>WORLD</div>
             <div class="rightSideTextDigitalDepth">
-               ScrollTrigger<br>Container Animation<br>Scrub
+               Z-AXIS<br>X-AXIS<br>Y-AXIS
             </div>
          </div>
       </div>
@@ -1106,329 +204,14 @@ background-color: #5182EE;
       <div class="parentImgZoomBody">
          <div class="top"></div>
          <div class="wrap">
-            <img class="zoom" src="/iphoneImage.png" >
+            <img class="zoom" src="/functions/public/iphoneImage.png" >
          </div>
          <div class="bottom"></div>
       </div>
 
 </html>
 </body>
-<script>
-       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-       const advContainer = document.querySelector(".advContainer");
-    const pageGroups = gsap.utils.toArray(".pageGroup");
-    const texts = gsap.utils.toArray(".anim");
-    const mask = document.querySelector(".mask");
-
-    let scrollTween = gsap.to(pageGroups, {
-        xPercent: -100 * (pageGroups.length - 1),
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".advContainer",
-            start: 'top top',
-            pin: true,
-            scrub: 1,
-            end: "+=20500",
-            snap: 1 / (pageGroups.length + 1),
-        }
-    });
-
-    console.log(1 / (pageGroups.length - 1))
-
-    //Progress bar animation
-
-    gsap.to(mask, {
-        width: "100%",
-        scrollTrigger: {
-            trigger: ".wrapper",
-            start: "top left",
-            scrub: 1
-        }
-    });
-
-    // whizz around the pageGroups
-    pageGroups.forEach((pageGroups) => {
-        // grab the scoped text
-        let text = pageGroups.querySelectorAll(".anim");
-
-        // bump out if there's no items to animate
-        if (text.length === 0) return
-
-        // do a little stagger
-        gsap.from(text, {
-            y: -130,
-            opacity: 0,
-            duration: 2,
-            ease: "elastic",
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: pageGroups,
-                containerAnimation: scrollTween,
-                start: "left center",
-            }
-        });
-    });
-</script>
-<script>
-       //////////////////////////////////////// ANIMATE THE ELEMENTS UNDER THE parentContainerHowTo ////////////////////////////////////////////////////////////////////////////////
-
-       document.addEventListener('DOMContentLoaded', () => {
-
-const howToGroups = gsap.utils.toArray('.howToGroup');
-
-let howToscrollTween = gsap.to(howToGroups, {
-    xPercent: -100 * (howToGroups.length - 1),
-    ease: 'none',
-    scrollTrigger: {
-        trigger: '.parentContainerHowTo',
-        pin: true,
-        scrub: 0.5,
-        snap: 1 / (howToGroups.length - 1),
-        start: 'top top',
-        end: 10100
-    }
-})
-
-gsap.to('.fancyNav', {
-    fontSize: '2.5rem',
-    top: '4rem',
-    scrollTrigger: {
-        trigger: '.fancyNav',
-        start: 'top top',
-        end: 1500,
-        scrub: 0.5,
-    }
-})
-
-gsap.to('#blueLine', {
-    height: '10rem',
-    scrollTrigger: {
-        trigger: '#blueLine',
-        scrub: 0.5,
-        start: 'center center',
-        end: 2000,
-    }
-})
-
-document.querySelectorAll('.character').forEach(el => {
-
-    gsap.to(el.querySelector('.leftSideText'), {
-        x: 0,
-        y: 0,
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.leftSideText'),
-            start: 'top bottom',
-            end: '+=1000',
-            scrub: 0.5,
-        }
-    })
-    gsap.to(el.querySelector('.leftSideTextDigitalDepth'), {
-        x: 0,
-        y: 0,
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.leftSideTextDigitalDepth'),
-            start: 'top bottom',
-            end: '+=1000',
-            scrub: 0.5,
-        }
-    })
-
-    gsap.to(el.querySelector('.rightSideText'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.rightSideText'),
-            start: 'top bottom',
-            end: '+=20%',
-            scrub: 0.5,
-        }
-    })
-    gsap.to(el.querySelector('.rightSideTextDigitalDepth'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.rightSideTextDigitalDepth'),
-            start: 'top bottom',
-            end: '+=20%',
-            scrub: 0.5,
-        }
-    })
-
-    gsap.to(el.querySelector('.quickStatement'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.quickStatement'),
-            start: 'top bottom',
-            end: '+=10%',
-            scrub: 0.5,
-        }
-    })
-    gsap.to(el.querySelector('.quickStatementDigitalDepth'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.quickStatementDigitalDepth'),
-            start: 'top bottom',
-            end: '+=10%',
-            scrub: 0.5,
-        }
-    })
-
-    gsap.to(el.querySelector('.intentionallyEmpty'), {
-        x: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.intentionallyEmpty'),
-            start: 'top bottom',
-            end: '+=' + window.innerWidth,
-            scrub: 0.5,
-        }
-    })
-    gsap.to(el.querySelector('.intentionallyEmpty2'), {
-        x: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.intentionallyEmpty2'),
-            start: 'top bottom',
-            end: '+=' + window.innerWidth,
-            scrub: 0.5,
-        }
-    })
-    gsap.to(el.querySelector('.intentionallyEmpty3'), {
-        x: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.intentionallyEmpty3'),
-            start: 'top bottom',
-            end: '+=' + window.innerWidth,
-            scrub: 0.5,
-        }
-    })
-
-    gsap.to(el.querySelector('img'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('img'),
-            start: 'top bottom',
-            end: '+=50%',
-            scrub: 0.5,
-        }
-    })
-
-    gsap.to(el.querySelector('.howToGroupBigText'), {
-        y: 0,
-        ease: 'none',
-        scrollTrigger: {
-            containerAnimation: howToscrollTween,
-            trigger: el.querySelector('.howToGroupBigText'),
-            start: 'top bottom',
-            end: '+=100%',
-            scrub: 0.5,
-        }
-    })
-
-})
-})
-</script>
-<script>
-       // For welcome text H1
-       const welcomeH1 = new SplitType('#welcomeH1');
-    const welcomeH1Chars = welcomeH1.chars; 
-    const welcomeH1Animation = gsap.to(welcomeH1Chars, {
-        y: 0,
-        stagger: 0.05,
-        delay: 0.3,
-        duration: .1
-    }) // GSAP.to is the animation
-
-    const welcomeH2 = new SplitType('#welcomeH2'); 
-    const welcomeH2Chars = welcomeH2.chars; 
-    const welcomeH2Animation = gsap.to(welcomeH2Chars, { 
-        y: 0,
-        stagger: 0.01,
-        delay: 0.1,
-        duration: .1,
-        scrollTrigger: { 
-            trigger: "#parentContainer",
-            start: "top 100%",
-            markers: true
-        }
-    })
-
-    const statementH1 = new SplitType('#statementH1'); 
-    const statementH1Chars = statementH1.chars; 
-    const statementH1Animation = gsap.to(statementH1Chars, { 
-        y: 0,
-        stagger: 0.01,
-        delay: 0.2,
-        duration: .1,
-        scrollTrigger: { 
-            trigger: "#secondParentContainer",
-            start: "top 60%",
-            markers: true
-        }
-    })
-
-    const statement2H1 = new SplitType('#statement2H1'); 
-    const statement2H1Chars = statement2H1.chars; 
-    const statement2H1Animation = gsap.to(statement2H1Chars, { 
-        y: 0,
-        stagger: 0.01,
-        delay: 0.5,
-        duration: .1,
-        scrollTrigger: { 
-            trigger: "#secondParentContainer",
-            start: "top 60%",
-        }
-    })
-
-
-    const maleOTGImage = document.querySelector("#row2ImageMaleOTG");
-
-    // Create animation timeline
-    const wobbleAnimation = gsap.timeline({
-        repeat: -1,
-        yoyo: true
-    });
-
-    // Add wobble animation (adjust the values to get the desired effect)
-    wobbleAnimation.to(maleOTGImage, {
-        x: 3, // move 5 pixels to the right
-        duration: 0.5, // animation duration
-        ease: "power1.inOut", // easing function for smooth movement
-    }).to(maleOTGImage, {
-        x: -3, // move 5 pixels to the left
-        duration: 0.5,
-        ease: "power1.inOut",
-    });
-    // Play the animation
-    wobbleAnimation.play();
-</script>
-<script>
-   const zoom = document.querySelector('.zoom');
-
-gsap.fromTo(zoom, {
-    scale: 2.2
-}, {
-    scale: 1,
-    scrollTrigger: {
-        trigger: '.parentImgZoomBody',
-        start: 'top top',
-        end: () => "+=" + (document.querySelector('.wrap').offsetHeight - (window.innerHeight / 2)),
-        scrub: true
-    }
-});
-</script>
+<script src="/functions/public/scripts/intro.js"></script>
+<script src="/functions/public/scripts/howToGroups.js"></script>
+<script src="/functions/public/scripts/zoom.js"></script>
+<script src="/functions/public/scripts/justOneClick.js"></script>
