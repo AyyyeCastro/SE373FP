@@ -1,0 +1,223 @@
+<html lang="en">
+   <head>
+      <!-- Splittype -->
+      <script src="https://unpkg.com/split-type"></script>
+      <!--GSAP-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EaselPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/PixiPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+      <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+      <!--Bootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script
+         src="https://kit.fontawesome.com/7a790d5aa6.js"
+         crossorigin="anonymous"
+         ></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Anta&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+         rel="stylesheet"
+         />
+      <link rel="stylesheet" type="text/css" href="/styles.css" />
+      <link rel="stylesheet" type="text/css" href="/stylesHowTo.css" />
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>W3 aCastro</title>
+   </head>
+   <body>
+
+
+<div class="container-fluid d-flex flex-column" id="parentContainer">
+   <nav class="myNavBar">
+   <a class="" href="/" id="topNav">Home</a>
+   <a class="" href="/taskView">Task List</a>
+   <a class="" href="/howTo">How To</a>
+</nav>   
+   <spline-viewer  url="https://prod.spline.design/1gFB4IEi0GX4ryhE/scene.splinecode" style="position: absolute; top: 0; left: 0; height: 100vh; width: 100vw;"></spline-viewer>
+  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+    <h1 id="welcomeH1">Traket</h1>
+     <img src="/femaleRedShirt.png" alt="Welcome container image" id="femaleBlueJacketWelcomeContainerImage">
+      <img src="/maleTanSsitting.png" alt="Welcome container image" id="malePhoneWelcomeContainerImage">
+  </div>
+</div>
+      <!-- Traket ad info --> <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+      <div class="container-fluid" id="secondParentContainer">
+         <div class="container-fluid" id="emptyTopSecondContainer"></div>
+         <div class="container-fluid" id="secondContainer">
+            <h1 id="welcomeH2">Create alarms, set timers, and make your lists.</h1>
+         </div>
+         <div class="container-fluid" id="emptyBottomSecondContainer"></div>
+      </div>
+      <div class="container-fluid" id="thirdParentContainer">
+         <div class="container-fluid" id="thirdContainer">
+            <div class="row" id="taskRow">
+               <div class="col-md-3"></div>
+               <div class="col-md-6 align-self-center" id="taskImgCol">
+                  <img
+                     src="/taskImg.png"
+                     alt="taskImage.png"
+                     id="taskImage"
+                     style="width: 100%;"
+                     />
+               </div>
+               <div class="col-md-2 align-self-center">
+                  <h1 id="statementH1">Keep track of your life.</h1>
+               </div>
+            </div>
+            <!-- row 2 -->
+            <div class="row" id="taskRow">
+               <div class="col-lg-1"></div>
+               <div class="col-lg-3 align-self-center" id="taskImgCol">
+                  <img
+                     src="/alarmClocks.png"
+                     alt="taskImage.png"
+                     id="taskImage"
+                     />
+               </div>
+               <div class="col-lg-4 align-self-center">
+                  <h1 id="statement2H1">Never miss an event again.</h1>
+                  <i>Note: this a mock feature.</i>
+                  <img src="/swirlyArrowLeft.png" alt="Welcome container image" id="row2ImageArrow">
+                  <img src="/maleOTG.png" alt="Welcome container image" id="row2ImageMaleOTG">
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Vertical ad --> 
+            <!-- VERTICLE ANIMATIONS --> <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+      <div class="verticalBody contianer-fluid">
+
+        <div class="verticalBG"></div>
+        <div id="justOneClickParent" class="contianer-fluid flexible rowVerticalGroup">
+          <h1 class="verticalH1">JUST<br>ONE<br>
+            <div class="keyboard">
+              <span class="clickCharGroup">C</span>
+              <span class="clickCharGroup">L</span>
+              <span class="clickCharGroup">I</span>
+              <span class="clickCharGroup">C</span>
+              <span class="clickCharGroup">K</span>
+            </div>
+            AWAY.
+          </h1>
+          <img src="/maleComputer.png" id="justOneClickParentMaleComputerImage">
+        </div>
+
+        <div id="shareParent" class="contianer-fluid flexible rowVerticalGroup">
+          <div><img src="/groupConversation.png" id="shareGroupConversationImage"></div>
+          <div class="sharePromo flexible columnVerticleGroup">
+            <h2 class="verticalH2">SHARE YOUR LISTS</h2>
+            <p class="verticalP">Easily share your lists with friends. Invite them as contributors or just viewers!</p>
+          </div>
+        </div>
+
+        <div id="reviewsParent" class="contianer-fluid flexible rowVerticalGroup">
+          <div class="reviewsPromo flexible columnVerticleGroup">
+            <h2 class="verticalH2">PEOPLE LOVE IT</h2>
+            <p class="verticalP">It's all yours! Change the colors as you like. Make them purple, green, red, anything.</p>
+          </div>
+          <div><img src="/maleElderlyPhone.png" id=""></div>
+          <div><img src="/groupFemaleTalking.png" id=""></div>
+        </div>
+
+        <div id="endPageParent" class="contianer-fluid flexible columnVerticleGroup">
+            <img src="/appleDownload.png" id="appleDownloadImage">
+          <img src="/gpDOwnload.png" id="gpDownloadImage">
+          <div><img src="/neutralWalkingPhone.png" id=""></div>
+          <h2 class="verticalH2">GET THE APP TODAY</h2>
+          <h2 class="verticalH2">TRAKET</h2>
+        </div>
+      </div>
+      <!-- -->
+    <div class="container-fluid">
+      <div id="circleFillParent">
+        <div id="circleFill"></div>
+      </div>
+    </div>
+
+      <!--HowtoBoyd-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+      <div class="howToBody">
+      <div class="parentContainerHowTo">
+         <div class="fancyNav">
+            <h1>
+               <a class="howToNav" href="/" id="topNav">Home</a><br/>
+               <a class="howToNav" href="/taskView">Task List</a><br/>         
+               <a class="howToNav" href="/howTo">How To</a>
+            </h1>
+         </div>
+         <div class="intro howToGroup">
+            <div id="blueLine"></div>
+         </div>
+         <div class="lessonStart character howToGroup">
+            <div class="intentionallyEmpty"></div>
+            <img src="/femaleOTG.png" alt=""><span class="howToGroupBigText">GSAP</span>
+            <div class="leftSideText">
+               This code animates an element with the class ".box" over 2 seconds.
+               It moves the element 200 pixels to the right and 100 pixels down.
+               The "ease" property applies a bouncing easing effect to the animation.
+            </div>
+            <div class="quickStatement"><span>A.K.A</span>GreenSock Animation Platform</div>
+            <div class="rightSideText">
+               gsap.to(".box", { duration: 2, x: 200, y: 100, ease: "bounce" });
+            </div>
+         </div>
+         <div class="keyFeatures character howToGroup">
+            <div class="intentionallyEmpty"></div>
+            <img src="/maleLookingAtPhone.png" alt=""><span class="howToGroupBigText">KEY FEATURES</span>
+            <div class="leftSideText">
+               <ol>
+                  <Li>A <b>plugin</b> for GSAP. Assigns elements of the HTML to trigger the animation.</Li>
+                  <Li>A <b>property</b> of the Scroll Trigger plugin. Synchronizes all of the children in the container to move with the parent container.</Li>
+                  <Li>Another <b>property</b> of the Scroll Trigger plugin. Correlates animation speed with the scroll speed.</Li>
+               </oL>
+            </div>
+            <div class="quickStatement"><span>Properties and</span>Plugins</div>
+            <div class="rightSideText"> ScrollTrigger<br>Container Animation<br>Scrub</div>
+         </div>
+         <div class="digitalDepth character howToGroup">
+            <div class="intentionallyEmpty2"></div>
+            <div class="intentionallyEmpty3"></div>
+            <img src="/femaleComputer.png" alt=""><span class="howToGroupBigText">DIGITAL DEPTH</span>
+            <div class="leftSideTextDigitalDepth">
+               <ol>
+                  <Li>A <b>plugin</b> for GSAP. Assigns elements of the HTML to trigger the animation.</Li>
+                  <Li>A <b>property</b> of the Scroll Trigger plugin. Synchronizes all of the children in the container to move with the parent container.</Li>
+                  <Li>Another <b>property</b> of the Scroll Trigger plugin. Correlates animation speed with the scroll speed.</Li>
+               </oL>
+            </div>
+            <div class="quickStatementDigitalDepth"><span>Properties and</span>Plugins</div>
+            <div class="rightSideTextDigitalDepth">
+               ScrollTrigger<br>Container Animation<br>Scrub
+            </div>
+         </div>
+      </div>
+      <!--pinkBody-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+      <div class="fixVHRelativity">
+      </div>
+      <!-- Image Zoom slide -->   <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->  <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+      <div class="parentImgZoomBody">
+         <div class="top"></div>
+         <div class="wrap">
+            <img class="zoom" src="/iphoneImage.png" >
+         </div>
+         <div class="bottom"></div>
+      </div>
+
+</html>
+</body>
+<script src="scripts/intro.js"></script>
+<script src="scripts/howToGroups.js"></script>
+<script src="scripts/zoom.js"></script>
+<script src="scripts/justOneClick.js"></script>
