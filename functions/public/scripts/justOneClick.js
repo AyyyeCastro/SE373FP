@@ -2,8 +2,9 @@
 
   // background progress verticalBG
   animateverticalBG("#shareParent", "35%", "0%");
-  animateverticalBG("#reviewsParent", "55%", "35%");
-  animateverticalBG("#endPageParent", "100%", "65%");
+  animateverticalBG("#reviewsParent", "75%", "75%");
+  animateverticalBG("#endPageParent", "100%", "100%");
+  
 
   function animateverticalBG(triggerElement, onEnterWidth, onLeaveBackWidth) {
       gsap.to(".verticalBG", {

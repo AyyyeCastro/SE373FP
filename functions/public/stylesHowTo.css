@@ -9,7 +9,7 @@
     --fs-sm: 1.4rem; /* Subtitle font */
   }
   /* Min width has a "mobile first" mentality */
-  @media (min-width: 70em) {
+  @media (min-width: 90em) {
     :root {
       --fs-xlSpecial: clamp(25rem, 16vw + 1rem, 10rem); /* Used for Welcome screen */
       --fs-lg: 2.1rem; /* Body title font */

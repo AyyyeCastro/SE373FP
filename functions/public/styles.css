@@ -10,6 +10,7 @@
     --ff-body: "Bebas Neue", sans-serif;
     /* Clamp prevents browsers from over/under sizing from scaling. 
     clam(min rem, set vw + amount, max rem) */
+    --fs-xlSpecialV: clamp(10rem, 16vw + 1rem, 10rem); /* Header font */
     --fs-xl: clamp(3rem, 16vw + 1rem, 10rem); /* Header font */
     --fs-lg: 1.8rem; /* Body title font */
     --fs-md: 1.4rem; /* Main body font */
@@ -18,6 +19,7 @@
   /* Min width has a "mobile first" mentality */
   @media (min-width: 40em) {
     :root {
+      --fs-xlSpecialV: clamp(15rem, 16vw + 1rem, 10rem); /* Header font */
       --fs-xl: clamp(6rem, 16vw + 1rem, 10rem); /* Used for Welcome screen */
       --fs-lg: 2.1rem; /* Body title font */
       --fs-md: 1.2rem; /* Main body font */
@@ -251,7 +253,7 @@
   }
   #welcomeH1 {
     z-index: 1;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
     text-transform: uppercase;
     font-family: 'Bebas Neue';
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -415,7 +417,6 @@
       object-position: top center;
     }
     #row2ImageMaleOTG{
-      border: 2px solid red;
       position: absolute;
       top: 27%;
       right:5%; 
@@ -438,7 +439,6 @@
       object-position: top center;
     }
     #row2ImageMaleOTG{
-      border: 2px solid green;
       position: absolute;
       top: 27%;
       right:5%; 
@@ -494,11 +494,9 @@
   }
   #taskImgCol{
     margin-top: 15px;
-    border: 2px solid green;
-    
   }
   #taskImage{
-
+    border: 5px solid #EBD2BA;
     border-radius: 7px;
   }
 
@@ -630,9 +628,6 @@
 }
 
 
-
-
-
  /****************************************/
 
 .verticalBody {
@@ -668,7 +663,7 @@
 
 .verticalP {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--fs-lg);
   font-weight: 200;
   color: white;
 }
@@ -689,7 +684,7 @@
 }
 
 .verticalH1 {
-  font-size: 10vw;
+  font-size:  var(--fs-xlSpecialV);
   position: absolute;
   top: calc(100vh - 50vw);
   font-weight: 800;
@@ -700,7 +695,7 @@
 }
 
 .verticalH2 {
-  font-size: 40px;
+  font-size: var(--fs-lg);
   line-height: 1;
   color: white;
 }
@@ -728,7 +723,8 @@
 }
 
 #endPageParent {
-  height: 120vh;
+  height: 100vh;
+  width: 100vw;
   justify-content: flex-end !important;
   align-items: center !important;
   margin-bottom: 50px;
@@ -793,7 +789,6 @@
     right: -40%;
     width: 800px;
     height: 800px;
-    border: 5px solid red;
   }
 }@media screen and (max-width: 1080px) {
   #justOneClickParentMaleComputerImage {
@@ -802,7 +797,6 @@
     right: -20%;
     width: 600px;
     height: 600px;
-    border: 5px solid green;
   }
 }@media screen and (max-width: 720px) {
   #justOneClickParentMaleComputerImage {
@@ -810,7 +804,6 @@
     right: 0%;
     width: 500px;
     height: 500px;
-    border: 5px solid purple;
   }
 }
 #sh
@@ -825,7 +818,6 @@
     right: -10%;
     width: 900px;
     height: 900px;
-    border: 5px solid purple;
   }
 }@media screen and (max-width: 1440px) {
   #shareGroupConversationImage{
@@ -833,7 +825,6 @@
     right: -10%;
     width: 700px;
     height: 700px;
-    border: 5px solid red;
   }
 }@media screen and (max-width: 1080px) {
   #shareGroupConversationImage{
@@ -841,37 +832,68 @@
     right: -10%;
     width: 350px;
     height: 350px;
-    border: 5px solid green;
   }
 }@media screen and (max-width: 720px) {
   #shareGroupConversationImage {
     display: none;
   }
 }
-
+#reviewsElderlyImage{
+  position: relative;
+  right: -10%;
+  width: 370px;
+  height: 750px;
+}
+#reviewsFemaleGroupImage{
+    position: relative;
+    right: 40%;
+    width: 450px;
+    height: 750px;
+  }
 @media screen and (max-width: 2160px) {
-  #reviewsElderlyImage, #reviewsFemaleGroupImage{
+  #reviewsElderlyImage{
     position: relative;
     right: -10%;
-    width: 370px;
+    width: 350px;
     height: 750px;
-    border: 5px solid purple;
+    ;
+  }
+  #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 400px;
+    height: 750px;
+    ;
   }
 }@media screen and (max-width: 1440px) {
-  #reviewsElderlyImage, #reviewsFemaleGroupImage{
-    position: relative;
-    right: -10%;
-    width: 320px;
-    height: 650px;
-    border: 5px solid red;
-  }
-}@media screen and (max-width: 1080px) {
-  #reviewsElderlyImage, #reviewsFemaleGroupImage{
+  #reviewsElderlyImage{
     position: relative;
     right: -10%;
     width: 270px;
+    height: 650px;
+    ;
+  }
+  #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 330px;
+    height: 600px;
+    ;
+  }
+}@media screen and (max-width: 1080px) {
+  #reviewsElderlyImage{
+    position: relative;
+    right: -10%;
+    width: 220px;
     height: 550px;
-    border: 5px solid green;
+    ;
+  }
+  #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 300px;
+    height: 550px;
+    ;
   }
 }@media screen and (max-width: 720px) {
   #reviewsElderlyImage, #reviewsFemaleGroupImage {
