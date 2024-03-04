@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+    --ff-body: "Bebas Neue", sans-serif;
+    /* Clamp prevents browsers from over/under sizing from scaling. 
+    clam(min rem, set vw + amount, max rem) */
+    --fs-xlSpecial: clamp(10rem, 16vw + 1rem, 10rem); /* Header font */
+    --fs-lg: 1.8rem; /* Body title font */
+    --fs-md: 1.4rem; /* Main body font */
+    --fs-sm: 1.4rem; /* Subtitle font */
+  }
+  /* Min width has a "mobile first" mentality */
+  @media (min-width: 70em) {
+    :root {
+      --fs-xlSpecial: clamp(25rem, 16vw + 1rem, 10rem); /* Used for Welcome screen */
+      --fs-lg: 2.1rem; /* Body title font */
+      --fs-md: 1.2rem; /* Main body font */
+      --fs-sm: 1.5rem; /* Subtitle font */
+    }
+  }
 
 .howToBody *, *::before , *::after {
     margin: 0;
@@ -140,7 +158,7 @@
 }
 
 .howToGroupBigText {
-    font-size: 25rem;
+    font-size:  var(--fs-xlSpecial);
     width: 100%;
     text-align: center;
     color: #D2667A;

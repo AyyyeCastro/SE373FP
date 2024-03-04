@@ -258,6 +258,7 @@
     overflow: hidden;
   }
   #parentContainer {
+    cursor:none;
     height: 90vh;
     position: relative;
     overflow: hidden;
@@ -402,7 +403,7 @@
     object-fit:fill; 
     object-position: top center;
   }
-  @media (min-width: 2160px) {
+  @media screen and (min-width: 2160px) {
     #row2ImageArrow {
       position: absolute;
       top: 30%;
@@ -425,12 +426,11 @@
       object-position: top center;
 
     }
-  }
-  @media (max-width: 2159px) {
+  } @media screen and (max-width: 2159px) {
     #row2ImageArrow {
       position: absolute;
       top: 30%;
-      right: 25%;
+      right: 26%;
       z-index: 1; /* the image is on top of other elements */
       width: 350px;
       height: 150px; 
@@ -448,8 +448,7 @@
       object-fit:cover; 
       object-position: top center;
     }
-  }
-  @media (max-width: 1440px) {
+  } @media screen and (max-width: 1440px) {
     #row2ImageArrow {
       display:none;
     }
@@ -464,12 +463,12 @@
       object-fit:cover; 
       object-position: top center;
     }
-  }
-  @media (max-width: 1080px) {
+  } @media screen and (max-width: 1439px) {
     #row2ImageArrow {
       display: none;
     }
     #row2ImageMaleOTG{
+      border: 2px solid blue;
       position: absolute;
       top: 39%;
       right:5%; 
@@ -479,8 +478,7 @@
       object-fit:cover; 
       object-position: top center;
     }
-  }
-  @media (max-width: 720px) {
+  }@media screen and (max-width: 1080px) {
     #row2ImageArrow {
       display: none;
     }
@@ -496,9 +494,11 @@
   }
   #taskImgCol{
     margin-top: 15px;
+    border: 2px solid green;
+    
   }
   #taskImage{
-    border: 7px solid #EBD2BA;
+
     border-radius: 7px;
   }
 
@@ -681,7 +681,11 @@
   top: 0;
   background-color: #FFD787;
   z-index: -1;
-
+}
+@media screen and (max-width: 720px){
+  .verticalBG{
+    background-color: #5182EE;
+  }
 }
 
 .verticalH1 {
@@ -774,18 +778,114 @@
 }
  #justOneClickParentMaleComputerImage{
   position: relative;
-  right: -40%;
+  right: -50%;
 }
+@media screen and (max-width: 2160px) {
+  #justOneClickParentMaleComputerImage {
+    position: relative;
+    right: -50%;
+    width: 1000px;
+    height: 1000px;
+  }
+}@media screen and (max-width: 1440px) {
+  #justOneClickParentMaleComputerImage {
+    position: relative;
+    right: -40%;
+    width: 800px;
+    height: 800px;
+    border: 5px solid red;
+  }
+}@media screen and (max-width: 1080px) {
+  #justOneClickParentMaleComputerImage {
+    position: relative;
+    top: 20%; 
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    border: 5px solid green;
+  }
+}@media screen and (max-width: 720px) {
+  #justOneClickParentMaleComputerImage {
+    position: relative;
+    right: 0%;
+    width: 500px;
+    height: 500px;
+    border: 5px solid purple;
+  }
+}
+#sh
 #shareGroupConversationImage{
   position: relative;
   right: -10%;
 }
+
+@media screen and (max-width: 2160px) {
+  #shareGroupConversationImage{
+    position: relative;
+    right: -10%;
+    width: 900px;
+    height: 900px;
+    border: 5px solid purple;
+  }
+}@media screen and (max-width: 1440px) {
+  #shareGroupConversationImage{
+    position: relative;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    border: 5px solid red;
+  }
+}@media screen and (max-width: 1080px) {
+  #shareGroupConversationImage{
+    position: relative;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    border: 5px solid green;
+  }
+}@media screen and (max-width: 720px) {
+  #shareGroupConversationImage {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 2160px) {
+  #reviewsElderlyImage, #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 370px;
+    height: 750px;
+    border: 5px solid purple;
+  }
+}@media screen and (max-width: 1440px) {
+  #reviewsElderlyImage, #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 320px;
+    height: 650px;
+    border: 5px solid red;
+  }
+}@media screen and (max-width: 1080px) {
+  #reviewsElderlyImage, #reviewsFemaleGroupImage{
+    position: relative;
+    right: -10%;
+    width: 270px;
+    height: 550px;
+    border: 5px solid green;
+  }
+}@media screen and (max-width: 720px) {
+  #reviewsElderlyImage, #reviewsFemaleGroupImage {
+    display: none;
+  }
+}
+
 #gpDownloadImage{
   top: 40%;
   position: relative;
   right: -50%;
   width: 50%;
 }
+
 #appleDownloadImage{
   top: 50%;
   position: relative;
