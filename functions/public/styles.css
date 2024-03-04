@@ -264,26 +264,71 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
   }
-  #femaleBlueJacketWelcomeContainerImage {
-    position: absolute;
-    top: 40%;
-    right: 2%;
-    width: 820px;
-    height: 900px; 
-    object-fit:cover; 
-    object-position: top center;
-    transform: scaleX(-1); /* flip vertically */
-  }
-  
 
-  #malePhoneWelcomeContainerImage {
-    position: absolute;
-    top: 52%;
-    left: 2%; 
-    width: 550px;
-    height: 700px; 
-    object-fit:cover; 
-    object-position: top center;
+  @media (min-width: 2160px) {
+    #femaleBlueJacketWelcomeContainerImage,
+    #malePhoneWelcomeContainerImage {
+      height: 900px;
+      object-fit: cover;
+      object-position: top center;
+    }
+  
+    #femaleBlueJacketWelcomeContainerImage {
+      width: 825px;
+      position: absolute;
+      top: 40%;
+      right: 2%;
+      transform: scaleX(-1); /* flip vertically */
+    }
+  
+    #malePhoneWelcomeContainerImage {
+      width: 750px;
+      position: absolute;
+      top: 43%;
+      left: 2%;
+    }
+  }
+  @media (min-width: 720px) {
+    #femaleBlueJacketWelcomeContainerImage {
+      width: 555px;
+      height: 600px; /* Adjusted height for smaller screens */
+      position: absolute;
+      top: 60%;
+      right: 2%;
+      transform: scaleX(-1); /* flip vertically */
+    }
+  
+    #malePhoneWelcomeContainerImage {
+      width: 450px;
+      height: 600px; /* Adjusted height for smaller screens */
+      position: absolute;
+      top: 63%;
+      left: 2%;
+    }
+  }
+  @media (max-width: 719px) {
+    #femaleBlueJacketWelcomeContainerImage {
+      position: absolute;
+      top: 80%;
+      width: 90%;
+      height: 200px; 
+      object-fit: cover;
+      object-position: top center;
+      transform: scaleX(-1); /* flip vertically */
+      background-color: #5182EE;
+      border-radius: 7px;
+    }
+  
+    #malePhoneWelcomeContainerImage {
+      position: absolute;
+      top: 10%;
+      width: 90%;
+      height: 200px; 
+      object-fit: cover; 
+      object-position: top center;
+      border-radius: 7px;
+      background: linear-gradient(50deg,#EBD2BA, #2742FF, #69A2AE, #FFA9C4);
+    }
   }
 
 
@@ -356,6 +401,92 @@
     height: 170px; 
     object-fit:fill; 
     object-position: top center;
+  }
+  @media (min-width: 2160px) {
+    #row2ImageArrow {
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      z-index: 1; /* the image is on top of other elements */
+      width: 450px;
+      height: 170px; 
+      object-fit:fill; 
+      object-position: top center;
+    }
+    #row2ImageMaleOTG{
+      border: 2px solid red;
+      position: absolute;
+      top: 27%;
+      right:5%; 
+      z-index: 1; /* To ensure the image is on top of other elements */
+      width: 550px;
+      height: 1050px; 
+      object-fit:cover; 
+      object-position: top center;
+
+    }
+  }
+  @media (max-width: 2159px) {
+    #row2ImageArrow {
+      position: absolute;
+      top: 30%;
+      right: 25%;
+      z-index: 1; /* the image is on top of other elements */
+      width: 350px;
+      height: 150px; 
+      object-fit:fill; 
+      object-position: top center;
+    }
+    #row2ImageMaleOTG{
+      border: 2px solid green;
+      position: absolute;
+      top: 27%;
+      right:5%; 
+      z-index: 1; /* To ensure the image is on top of other elements */
+      width: 550px;
+      height: 1050px; 
+      object-fit:cover; 
+      object-position: top center;
+    }
+  }
+  @media (max-width: 1440px) {
+    #row2ImageArrow {
+      display:none;
+    }
+    #row2ImageMaleOTG{
+      border: 2px solid yellow;
+      position: absolute;
+      top: 27%;
+      right:5%; 
+      z-index: 1; /* To ensure the image is on top of other elements */
+      width: 550px;
+      height: 1050px; 
+      object-fit:cover; 
+      object-position: top center;
+    }
+  }
+  @media (max-width: 1080px) {
+    #row2ImageArrow {
+      display: none;
+    }
+    #row2ImageMaleOTG{
+      position: absolute;
+      top: 39%;
+      right:5%; 
+      z-index: 1; /* To ensure the image is on top of other elements */
+      width: 400px;
+      height: 770px; 
+      object-fit:cover; 
+      object-position: top center;
+    }
+  }
+  @media (max-width: 720px) {
+    #row2ImageArrow {
+      display: none;
+    }
+    #row2ImageMaleOTG{
+      display: none;
+    }
   }
   #taskRow{
 
