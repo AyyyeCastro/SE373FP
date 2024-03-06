@@ -282,7 +282,7 @@ height: 20vh;
 #part3{
   margin-top: -100px;;
   padding: 0;
-  min-height: 120vh;
+  min-height: 130vh;
   background-color: red;
   background-image: url(/functions/public/kirbyBG2.jpg);
   background-size: cover;
@@ -378,11 +378,60 @@ height: 20vh;
   background:  linear-gradient(90deg, #f2f2f296, #FFFF, #f2f2f296);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-}#part3Row3ColLeftCustomContainer{
-  background:  linear-gradient(90deg, #FFFF, #F2F2F2);
-  padding: 15px;
+}#part3Row3ColLeftCustomContainer {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background: linear-gradient(90deg, #FFFF, #F2F2F2);
+  padding: 25px;
+  min-height: 20vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}#part3Row3ColLeftCustomContainer img {
+  border: 5px solid #FF0089;
+  background:  linear-gradient(-90deg, #FF7DB3, #FBE439);
+  border-radius: 50%;
+  width: 30%;
+  display: none;
+    position: relative;
+}#part3Row3ColLeftCustomContainer img.active {
+  display: block;
+}#part3Row3ColLeftCustomContainerPrevBtn{
+  width: 100px;
+}#part3Row3ColLeftCustomContainerNextBtn{
+  width: 100px;
+  transform: scaleX(-1); /* why make new arrow when one work ;D */
+}#part3Row3ColLeftCustomContainerInfoKirbyName{
+  font-size: var(--fs-md);
+  background: linear-gradient(90deg, #FFFF, #F2F2F2);
+  padding: 25px;
+    position: relative;
+  min-height: 5vh;
+  overflow: hidden;
+  align-items: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: relative;
+  border-bottom: 5px solid #cacaca6d;
+}#part3Row3ColLeftCustomContainerInfo{
+  font-size: var(--fs-md);
+  margin-top: -15px;
+  background: linear-gradient(90deg, #FFFF, #F2F2F2);
+  padding: 25px;
   border-radius: 25px;
+  min-height: 15vh;
+  overflow: hidden;
+  align-items: center;
+}#kirbyName{
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  text-align: center;
 }
+#kirbDescription{
+
+}
+
 
 
 

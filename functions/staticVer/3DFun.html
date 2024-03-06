@@ -107,12 +107,23 @@
     <div class="row" id="part3Row3">
       <div class="col-md-6" id="part3Row3ColLeft">
         <div id="part3Row3ColLeftCustomContainer">
-          test
+          <input type="image" src="/functions/public/yellowArrow.png" alt="Previous" onclick="prevImage()" id="part3Row3ColLeftCustomContainerPrevBtn">
+          <img src="/functions/public/sleepKirby.png" alt="Image 1" id="sleepKirby">
+          <img src="/functions/public/rangerKirby.png" alt="Image 2" id="rangerKirby">
+          <img src="/functions/public/fireKirby.png" alt="Image 3" id="fireKirby">
+          <input type="image" src="/functions/public/yellowArrow.png" alt="Next" onclick="nextImage()"  id="part3Row3ColLeftCustomContainerNextBtn">
+        </div>
+        <div id="part3Row3ColLeftCustomContainerInfoKirbyName">
+          <h1 id="kirbyName"></h1>
+        </div>
+        <div id="part3Row3ColLeftCustomContainerInfo">
+          <p id="kirbyDescription"></p>
         </div>
       </div>
       <div class="col-md-6" id="part3Row3ColRight">
       </div>
     </div>
+  
   </div>
 
 
@@ -262,4 +273,49 @@ app
       }
     });
   });
+</script>
+
+<script>
+let currentImageIndex = 0;
+  const images = document.querySelectorAll('#part3Row3ColLeftCustomContainer img');
+  const kirbyDescription = {
+    sleepKirby: "Zzz... Just one more minute, please... Zzz... Oh, c'mon... I'm too sleepy... Zzz... Just let me recover some health with a bit of rest... Zzz... Zzz... Zzzzz…",
+    rangerKirby: "Time for some shooting-star sharpshooting! Pew, pew! Hold the button down to charge and aim, then let go to send a sparkling shot flying. Charge it up for bigger blasts!",
+    fireKirby: "This ability is hot, hot, hot! Light fuses, burn through obstacles, and toast your enemies with the power of a raging fire. Run, jump, then attack to blast forward as a fireball!",
+  };
+  const kirbyName = {
+    sleepKirby: "Sleep",
+    rangerKirby: "Ranger",
+    fireKirby: "Fire",
+  };
+         
+  function showImage(index) {
+    images.forEach(image => image.classList.remove('active'));
+    images[index].classList.add('active');
+
+    // Get the ID of the currently active image
+    const activeImageId = images[index].id;
+
+    // Update the info based on the active image
+    const kirbyDescText = document.getElementById('kirbyDescription');
+    kirbyDescText.textContent = kirbyDescription[activeImageId] || "Kirby list empty.";
+
+    const KirbyNameText = document.getElementById('kirbyName');
+    KirbyNameText.textContent = kirbyName[activeImageId] || "Kirby list empty.";
+  }
+
+  function prevImage() {
+  currentImageIndex = (currentImageIndex === 0) ? (images.length - 1) : (currentImageIndex - 1);
+  showImage(currentImageIndex);
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : (currentImageIndex + 1);
+    showImage(currentImageIndex);
+  }
+               
+  // Show the first image initially
+  showImage(currentImageIndex);
+
+
 </script>
