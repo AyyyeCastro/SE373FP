@@ -1,0 +1,265 @@
+<html lang="en">
+   <head>
+      <!-- Sweet Alerts -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+      <!-- Splittype -->
+      <script src="https://unpkg.com/split-type"></script>
+      <!--GSAP-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EaselPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/PixiPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+      <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+      <!--Bootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script
+         src="https://kit.fontawesome.com/7a790d5aa6.js"
+         crossorigin="anonymous"
+         ></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="/functions/public/stylesFor3D.css" />
+      <link rel="stylesheet" type="text/css" href="/functions/public/stylesHowTo.css" />
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>W3 aCastro</title>
+   </head>
+   <body>
+
+  <!-- DISCLAIMER: ALL KIRBY COPY RIGHTS PROPERTY OF NINTENDO. THIS IS PURELY MADE FOR A FUN SCHOOL PROJECT. -->
+   <div class="container-fluid" id="part1">
+    <nav class="myNavBar">
+      <a class="" href="#">Home</a>
+      <a class="" href="#">Task List</a>
+      <a class="" href="#">How To</a>
+      </nav>
+    <canvas id="kirbyTextCanvas"></canvas>
+      <div class="canvas-cont">
+         <canvas id="kirbyModeCanvas"></canvas>
+       </div>
+      <div class="part1EmptyAligner"></div>
+      <div id="part1WelcomeH1Parent">
+         <h1 id="welcomeH1"></h1>
+      </div>
+      <div class="part1EmptyAligner"></div>
+   </div>
+
+   <div class="container-fluid" id="part2">
+    <div class="canvas-contBubbles">
+      <canvas id="bubblesCanvas"></canvas>
+    </div>
+    <div class="row" id="part2Row1">
+      <div class="col-md-6" id="part2Row1ColLeft">
+      </div>
+      <div class="col-md-6" id="part2Row1ColRight">
+        <h1>Join Kirby on an unforgettable journey</h1>
+        <p>Float off on an all-new adventure as the powerful puffball, Kirby. Explore 3D stages as you discover a mysterious world, save the kidnapped Waddle Dees, and defeat the ferocious Beast Pack. Hope you’re hungry for an unforgettable adventure!</p>
+      </div>
+    </div>
+    <div class="row" id="part2Row2">
+      <div class="col-md-6" id="part2Row2ColLeft">
+        <img src="/functions/public/purpleStart.png" id="part2Row2ColLeftPurpleStar">
+      </div>
+      <div class="col-md-6" id="part2Row2ColRight">
+        <div class="part2ColRightKirbyVideo">
+          <img src="/functions/public/yellowPlayBtn.png" id="part2ColRightKirbyVideoPlayBtn">
+          <video width="720" height="720" autoplay muted loop id="kirbyVideoSource">
+            <source src="/functions/public/kirbyLoop.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="part3">
+    <div class="row" id="part3Row1">
+      <div class="col-md-6" id="part3Row1ColLeft">
+        <h1>Unleash powerful abilities</h1>
+        <p>Copy enemies' abilities like Sword and Ice, as well as the new copy abilities Drill and Ranger, and use them to attack and explore your surroundings!</p>
+      </div>
+      </div>
+      <div class="col-md-6" id="part3Row1ColRight">
+    </div>
+    <div class="row" id="part3Row2">
+      <div class="col-md-6" id="part3Row2ColLeft">
+        <div class="part3ColLeftKirbyVideo">
+          <img src="/functions/public/yellowPlayBtn.png" id="part3ColLeftKirbyVideoPlayBtn">
+          <video autoplay muted loop id="kirbyVideoSource2">
+            <source src="/functions/public/kurbyPowersLoop.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="col-md-6" id="part3Row2ColRight">
+      </div>
+    </div>
+    <div class="row" id="part3Row3">
+      <div class="col-md-6" id="part3Row3ColLeft">
+        <div id="part3Row3ColLeftCustomContainer">
+          test
+        </div>
+      </div>
+      <div class="col-md-6" id="part3Row3ColRight">
+      </div>
+    </div>
+  </div>
+
+
+   <div class="container-fluid" id="part4">
+  </div>
+
+</html>
+</body>
+<script>
+  // For Kirby Header
+  const welcomeH1 = new SplitType('#welcomeH1'); 
+  const kirbyChars = welcomeH1.chars; 
+  const animateKirbyHeader = gsap.to(kirbyChars, {
+    y: 0,
+    y: -250, // Animate to y: 0 (top)
+    stagger: 0.05,
+    delay: 0.3,
+    duration: .1,
+  });
+</script>
+<script type="module">
+import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
+
+const canvas = document.getElementById("kirbyModeCanvas");
+const app = new Application(canvas);
+app
+  .load("https://prod.spline.design/Srv2mLsM7RXLVrSo/scene.splinecode")
+  .then(() => {
+    const Group = app.findObjectByName("Kirby");
+
+    gsap.set(Group.scale, { x: 4, y: 4, z: 4 });
+    gsap.set(Group.position, { x: 0, y: 0 });
+
+    let rotateGroup = gsap.to(Group.rotation, {
+      y: "+=360", // Rotate fully once
+      x: 0,
+      z: 0,
+      duration: 600,
+      repeat: -1,
+      ease: "none",
+      paused: true // Start the animation in paused state
+    });
+
+  // Add a ScrollTrigger for #part1
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#part1",
+        start: "top 60%",
+        end: "bottom center",
+        scrub: true,
+        onEnter: () => rotateGroup.resume(), // Resume the animation when entering #part1
+        onLeave: () => rotateGroup.pause(), // Pause the animation when leaving #part1
+        onEnterBack: () => rotateGroup.resume(), // Resume the animation when scrolling back into #part1
+        onLeaveBack: () => rotateGroup.pause() // Pause the animation when scrolling past the top of #part1
+      }
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#part2",
+        start: "top 60%",
+        end: "bottom bottom",
+        scrub: true
+      }
+    })
+    .to(Group.rotation, { y: Math.PI / 4, duration: 1 }) // Rotate 25% to the right
+    .to(Group.position, { x: -1500, y: -200 }, 0) // Additional movements
+    .to(Group.scale, { x: 3, y: 3, z: 3 }, 0);
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#part3",
+        start: "top bottom",
+        end: "center bottom",
+        scrub: true
+      }
+    })
+    .to(Group.rotation, { y: -Math.PI / 4, duration: 1 }) // Rotate 25% to the left
+    .to(Group.position, { x: 1500, y: 50 }, 0) // Additional movements
+    .to(Group.scale, { x: 2.5, y: 2.5, z: 2.5 }, 0);
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#part4",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true
+      }
+    })
+    .to(Group.rotation, { y: 0, duration: 1 }) // Rotate back to initial position
+    .to(Group.position, { x: 0, y: 0 }, 0) // Reset position
+    .to(Group.scale, { x: 2, y: 2, z: 2 }, 0); // Reset scale
+  });
+</script>
+<Script type="module">
+  import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
+
+  const kirbyTextCanvas = document.getElementById('kirbyTextCanvas');
+  const kirbyTextApp = new Application(kirbyTextCanvas);
+  kirbyTextApp.load('https://prod.spline.design/eYLgTQKZtcEOjReL/scene.splinecode');
+
+</Script>
+<script type="module">
+    //////////////////////////////////////////////
+  // For Bubbles // 
+  import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
+  const bubblesCanvas = document.getElementById('bubblesCanvas');
+  const bubblesApp = new Application(bubblesCanvas);
+  bubblesApp.load('https://prod.spline.design/tugsUkfqtss-0Zbm/scene.splinecode');
+
+</script>
+<script>
+  const playButton = document.getElementById("part2ColRightKirbyVideoPlayBtn");
+  const videoLink = 'https://youtu.be/H3LAkr0ANgw';
+
+  playButton.addEventListener("click", function() {
+    Swal.fire({
+      title: "Open YouTube?",
+      text: "Kirby and the Forgotten Land's Trailer",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes, Play",
+      cancelButtonText: "Cancel",
+      icon: '',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(videoLink);
+      }
+    });
+  });
+
+  const playButtonFeatures = document.getElementById("part3ColLeftKirbyVideoPlayBtn");
+  const videoLinkFeatures = 'https://youtu.be/RiPcRCWzcGo';
+
+  playButton.addEventListener("click", function() {
+    Swal.fire({
+      title: "Open YouTube?",
+      text: "Kirby and the Forgotten Land's Power Trailer",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes, Play",
+      cancelButtonText: "Cancel",
+      icon: '',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(videoLink);
+      }
+    });
+  });
+</script>

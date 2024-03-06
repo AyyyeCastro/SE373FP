@@ -1,0 +1,500 @@
+  /* Slideshow tutorial: https://youtu.be/VvSVw1yLAPM */
+  /* humaaans illustrations: https://www.humaaans.com/ */
+  /* Spline 3D Modeling: https://spline.design/ */
+  /* Font tutorial: https://www.youtube.com/watch?v=wARbgs5Fmuw */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+
+  /* This allows responsive font scaling to be easily manipulated with a default set (mobile) and one Desktop scaling w/ Media query. */
+  :root {
+    --ff-body: "Sniglet", system-ui;
+    /* Clamp prevents browsers from over/under sizing from scaling. 
+    clam(min rem, set vw + amount, max rem) */
+    --fs-xlSpecialV: clamp(25rem, 16vw + 1rem, 10rem); /* Header font */
+    --fs-xl: clamp(3rem, 16vw + 1rem, 10rem); /* Header font */
+    --fs-lg: 1.8rem; /* Body title font */
+    --fs-md: 1.4rem; /* Main body font */
+    --fs-sm: 1.4rem; /* Subtitle font */
+  }
+  /* Min width has a "mobile first" mentality */
+  @media (min-width: 40em) {
+    :root {
+      --ff-body: "Rubik Bubbles", system-ui;
+      --fs-xlSpecialV: clamp(40rem, 16vw + 1rem, 10rem); /* Header font */
+      --fs-xl: clamp(6rem, 16vw + 1rem, 10rem); /* Used for Welcome screen */
+      --fs-lg: 2.1rem; /* Body title font */
+      --fs-md: 1.4rem; /* Main body font */
+      --fs-sm: 1.5rem; /* Subtitle font */
+    }
+  }
+  body, html {
+    font-size: var( --fs-md);
+    font-family: "Sniglet", system-ui;
+    font-weight: 400;
+    color: #58C2B6;
+    background-color: #FCFCFC;
+    margin: 0;
+    padding: 0;
+  }  
+
+  .swal2-modal {
+    background:  linear-gradient(15deg, #FFFF, #f2f2f2);
+    border: 15px solid #FF7DB3; /* Remove default border */
+    border-radius: 25px; /* Add rounded corners */
+    font-size: var( --fs-lg);
+    font-family: "Sniglet", system-ui;
+    font-weight: 400;
+    color: #58C2B6;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF7DB3;
+  }
+  
+  .swal2-button {
+    color: white;
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  .swal2-confirm-button {
+    background-color: #FBE439; /* Set confirm button color */
+    color: #fff; /* Set confirm button text color */
+  }
+  
+  .swal2-cancel-button {
+    background-color: #C9DAE1; /* Set cancel button color */
+    color: #fff; /* Set cancel button text color */
+  }
+
+.myNavBar {
+  height: 35px;
+  width: 100%;
+  padding: 15px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 800;
+  font-style: normal;
+  font-size: var(--fs-lg);
+
+  }
+  .myNavBar a{
+
+    text-decoration: none;
+    color: #FCFCFC;  
+    text-decoration: overline;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #0C2991;
+  }
+  .myNavBar a:hover{
+    color: #95abf9;  
+  }
+  .myNavBar:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+#part1{
+  margin: 0;
+  padding: 0;
+  height: 120vh;
+  background-color: red;
+  background-image: url(/functions/public/kirbyBG.jpg);
+  background-size: cover;
+  background-position: top center;
+  /* Keeps the image CENTER in a static position */
+  background-attachment: fixed;
+  background-repeat: none;
+} #part1WelcomeH1Parent{
+  height: 50vh;
+} #welcomeH1{
+  font-size: var(--fs-xlSpecialV);
+  text-align: center;
+  /* color: linear-gradient(-90deg, #FEF594, #FBE439); */
+  color: #FBE439;
+  -webkit-text-stroke-width: 15px;
+  -webkit-text-stroke-color: #0C2991;
+}
+
+
+.part1EmptyAligner{
+height: 20vh;
+}
+
+/*********************************************************************************************************************************************************/
+/* ALL FOR PART2 ***********************/
+
+#part2{
+  margin: 0;
+  padding: 0;
+  min-height: 120vh;
+  background:  linear-gradient(-25deg, #FEF594, #FBE439);
+  border-radius: 25px;
+  margin-top: -100px;
+}#part2Row1{
+  min-height: 20vh;
+  border-radius: 25px;
+  padding-top: 55px;
+  padding-left: 55px;
+  padding-right: 55px;
+}#part2Row1ColRight{
+  position: relative;
+  border: 1px solid #4b4b4b8f;
+  box-shadow: 15px 15px 25px #4b4b4b8f;
+  padding: 55px;
+  border-radius: 25px;
+  background:  linear-gradient(90deg, #FFFF, #F2F2F2);
+}#part2Row1ColLeft{
+  padding: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#part2Row2{
+  margin-top: -50px;
+  border-radius: 25px;
+  padding-left: 55px;
+  padding-right: 55px;
+  min-height: 80vh;
+  overflow: hidden;
+}
+#part2Row2ColRight{
+  padding: 55px;
+  border-radius: 25px;
+  background:  linear-gradient(90deg, #FF7DB3, #FF0089);
+}#part2Row2ColLeft{
+  padding: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow: hidden;
+}#part2Row2ColLeftPurpleStar{
+  position: relative;
+
+  width: 800px; /* Adjust width and height as needed */
+  height: 780px; /* Adjust width and height as needed */
+}
+.part2ColRightKirbyVideo {
+  top: 50%;
+  left: 0%;
+  position: relative; /* Needed for child element positioning */
+   /* Clip overflowing content */
+}.part2ColRightKirbyVideo video {
+  box-shadow: 25px 25px 35px #4b4b4b8f;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the video */
+  border-radius: 50%; /* Make the video element circular */
+  width: 680px; /* Adjust width and height as needed */
+  height: 680px; /* Adjust width and height as needed */
+  border: 5px solid white;
+}
+#part2ColRightKirbyVideoPlayBtn{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the video */
+  border-radius: 50%; /* Make the video element circular */
+  width: 290px; /* Adjust width and height as needed */
+  height: 290px; /* Adjust width and height as needed */
+  z-index: 2;
+  opacity: 0.9;
+  background-color: rgb(255, 255, 255);
+  cursor:grab;
+}/* Media queries for responsive video size */
+@media (max-width: 768px) {
+  /* Adjust sizes for smaller screens (720p and below) */
+  .part2ColRightKirbyVideo video {
+    width: 280px;
+    height: 280px;
+  }
+  #part2ColRightKirbyVideoPlayBtn {
+    width: 140px;
+    height: 140px;
+  }
+  #part2ColLeft{
+    display: none;
+  }
+  .canvas-cont{
+    display: none;
+  }
+  .canvas-contBubbles{
+    display: none;
+  }
+  #part2Row2ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust sizes for medium screens (1080p) */
+  .part2ColRightKirbyVideo video {
+    width: 340px;
+    height: 340px;
+  }
+  #part2ColRightKirbyVideoPlayBtn {
+    width: 140px;
+    height: 140px;
+  }
+  #part2ColLeft{
+    display: none;
+  }
+  #part2Row2ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /* Adjust sizes for larger screens (1440p) */
+  .part2ColRightKirbyVideo video {
+    width: 520px;
+    height: 520px;
+  }
+  
+  #part2ColRightKirbyVideoPlayBtn {
+    width: 240px;
+    height: 240px;
+  }
+  #part2ColLeft{
+    display: none;
+  }
+  #part2Row2ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Adjust sizes for very large screens (4k+) */
+  .part2ColRightKirbyVideo video {
+    width: 680px;
+    height: 680px;
+  }
+  
+  #part2ColRightKirbyVideoPlayBtn {
+    width: 290px; /* Adjust width and height as needed */
+    height: 290px; /* Adjust width and height as needed */
+  }
+}
+
+/*********************************************************************************************************************************************************/
+/* ALL FOR PART3 ***********************/
+
+#part3{
+  margin-top: -100px;;
+  padding: 0;
+  min-height: 120vh;
+  background-color: red;
+  background-image: url(/functions/public/kirbyBG2.jpg);
+  background-size: cover;
+  background-position: top center;
+  /* Keeps the image CENTER in a static position */
+  background-attachment: fixed;
+  background-repeat: none;
+  border-radius: 25px;
+}#part3Row1{
+  min-height: 20vh;
+  border-radius: 25px;
+  padding-top: 55px;
+  padding-left: 55px;
+  padding-right: 55px;
+}#part3Row1ColRight{
+  padding: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}#part3Row1ColLeft{
+  position: relative;
+  border: 1px solid #4b4b4b8f;
+  box-shadow: 15px 15px 25px #4b4b4b8f;
+  padding: 55px;
+  border-radius: 25px;
+  background:  linear-gradient(-90deg, #FF7DB3, #FF0089);
+  color: white;
+}#part3Row2{
+  margin-top: -150px;
+  border-radius: 25px;
+  padding-left: 55px;
+  padding-right: 55px;
+  min-height: 40vh;
+  overflow: hidden;
+}#part3Row2ColRight{
+  padding: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow: hidden;
+}#part3Row2ColLeft{
+  padding: 55px;
+  background:  linear-gradient(90deg, #f2f2f296, #FFFF, #f2f2f296);
+}#part3Row2ColLeftPurpleStar{
+  position: relative;
+  width: 800px; /* Adjust width and height as needed */
+  height: 780px; /* Adjust width and height as needed */
+}
+.part3ColLeftKirbyVideo {
+  left: 0%;
+  height: 100%;
+  position: relative; /* Needed for child element positioning */
+  padding: 20px;
+   /* Clip overflowing content */
+}.part3ColLeftKirbyVideo video {
+  box-shadow: 25px 25px 35px #4b4b4b8f;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the video */
+  border-radius: 25px; /* Make the video element circular */
+  width: 840px; /* Adjust width and height as needed */
+  height: 480px; /* Adjust width and height as needed */
+  border: 5px solid white;
+}#part3ColLeftKirbyVideoPlayBtn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the video */
+  border-radius: 50%; /* Make the video element circular */
+  width: 290px; /* Adjust width and height as needed */
+  height: 290px; /* Adjust width and height as needed */
+  z-index: 2;
+  opacity: 0.9;
+  background-color: rgb(255, 255, 255);
+  cursor:grab;
+}/* Media queries for responsive video size */
+.part3ColLeftKirbyVideo2 {
+  top: 50%;
+  left: 0%;
+  position: relative; /* Needed for child element positioning */
+   /* Clip overflowing content */
+}
+#part3Row3{
+  border-radius: 25px;
+  padding-left: 55px;
+  padding-right: 55px;
+  overflow: hidden;
+}#part3Row3ColRight{
+  padding: 55px;
+  overflow: hidden;
+}#part3Row3ColLeft{
+  padding: 55px;
+  background:  linear-gradient(90deg, #f2f2f296, #FFFF, #f2f2f296);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}#part3Row3ColLeftCustomContainer{
+  background:  linear-gradient(90deg, #FFFF, #F2F2F2);
+  padding: 15px;
+  border-radius: 25px;
+}
+
+
+
+@media (max-width: 768px) {
+  /* Adjust sizes for smaller screens (720p and below) */
+  .part3ColLeftKirbyVideo video {
+    width: 341px; /* Adjust width and height as needed */
+    height: 195px;
+  }
+  #part3ColLeftKirbyVideoPlayBtn {
+    width: 140px;
+    height: 140px;
+  }
+  #part3ColLeft{
+    display: none;
+  }
+  .canvas-cont{
+    display: none;
+  }
+  .canvas-contBubbles{
+    display: none;
+  }
+  #part3row3ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust sizes for medium screens (1080p) */
+  .part3ColLeftKirbyVideo video {
+    width: 341px; /* Adjust width and height as needed */
+    height: 195px;
+  }
+  #part3ColLeftKirbyVideoPlayBtn {
+    width: 140px;
+    height: 140px;
+  }
+  #part3ColLeft{
+    display: none;
+  }
+  #part3row3ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /* Adjust sizes for larger screens (1440p) */
+  .part3ColLeftKirbyVideo video {
+    width: 440px; /* Adjust width and height as needed */
+    height: 250px;
+  }
+  
+  #part3ColLeftKirbyVideoPlayBtn {
+    width: 240px;
+    height: 240px;
+  }
+  #part3ColLeft{
+    display: none;
+  }
+  #part3row3ColLeftPurpleStar{
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Adjust sizes for very large screens (4k+) */
+  .part3ColLeftKirbyVideo video {
+    width: 640px; /* Adjust width and height as needed */
+    height: 365px;
+  }
+  
+  #part3ColLeftKirbyVideoPlayBtn {
+    width: 220px; /* Adjust width and height as needed */
+    height: 220px; /* Adjust width and height as needed */
+  }
+}
+
+
+/*********************************************************************************************************************************************************/
+/* ALL FOR PART4 ******** ***************/
+
+#part4{
+  margin: 0;
+  padding: 0;
+  height: 120vh;
+  background-color: purple;
+  margin-top: -100px;
+  border-radius: 25px;
+}
+
+
+.canvas-cont {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+} #kirbyModeCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-contBubbles {
+  z-index: 3;
+  position: absolute; /* Set to absolute position */
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1; /* Place it on top of other elements */
+} #bubblesCanvas {
+  opacity: 0.8;
+}
+
+

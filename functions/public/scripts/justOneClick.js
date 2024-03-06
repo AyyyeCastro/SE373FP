@@ -1,6 +1,5 @@
-
-
-  // background progress verticalBG
+ 
+ // background progress verticalBG
   animateverticalBG("#shareParent", "35%", "0%");
   animateverticalBG("#reviewsParent", "75%", "75%");
   animateverticalBG("#endPageParent", "100%", "100%");
