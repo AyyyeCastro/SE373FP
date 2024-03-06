@@ -102,6 +102,7 @@
         </div>
       </div>
       <div class="col-md-6" id="part3Row2ColRight">
+        <canvas id="starCanvas"></canvas>
       </div>
     </div>
     <div class="row" id="part3Row3">
@@ -121,6 +122,7 @@
         </div>
       </div>
       <div class="col-md-6" id="part3Row3ColRight">
+        <canvas id="starCanvas2"></canvas>
       </div>
     </div>
   </div>
@@ -172,13 +174,13 @@
   <div class="container-fluid" id="customFooter">
     <div class="row">
       <div class="col-sm">
-        One of three columns
+       Andrew Castro
       </div>
       <div class="col-sm">
-        One of three columns
+        SE373 Final Project
       </div>
       <div class="col-sm">
-        One of three columns
+        All properties of Kirby are copyright of Nintendo. Please don't sue me.
       </div>
     </div>
   </div>
@@ -424,9 +426,44 @@ let currentImageIndex = 0;
 
 <script type="module">
 
-  import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
-  const starCanvas = document.getElementById('star');
+import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
+  const starCanvas = document.getElementById('starCanvas');
   const starApp = new Application(starCanvas);
-  starApp.load('https://prod.spline.design/vsOkDyFrbJ8vRWGv/scene.splinecode');
+  starApp.load('https://prod.spline.design/vsOkDyFrbJ8vRWGv/scene.splinecode')
+
+  const starCanvas2 = document.getElementById('starCanvas2');
+  const starApp2 = new Application(starCanvas2);
+  starApp2
+  .load("https://prod.spline.design/rveDnJ6N6rlsRlGf/scene.splinecode")
+  .then(() => {
+    const Group = starApp2.findObjectByName("star");
+
+    gsap.set(Group.scale, { x: 1, y: 1, z: 4 });
+    gsap.set(Group.position, { x: 0, y: 0 });
+
+    let rotateGroup = gsap.to(Group.rotation, {
+      y: "+=360", // Rotate fully once
+      x: 0,
+      z: 0,
+      duration: 600,  
+      repeat: -1,
+      ease: "none",
+      paused: true // Start the animation in paused state
+    });
+
+  // Add a ScrollTrigger for #part1
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#part2",
+        start: "top 100%",
+        end: "bottom bottom",
+        scrub: true,
+        onEnter: () => rotateGroup.resume(), // Resume the animation when entering #part1
+        onLeave: () => rotateGroup.pause(), // Pause the animation when leaving #part1
+        onEnterBack: () => rotateGroup.resume(), // Resume the animation when scrolling back into #part1
+        onLeaveBack: () => rotateGroup.pause() // Pause the animation when scrolling past the top of #part1
+      }
+    });
+  })
 
 </script>
