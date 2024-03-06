@@ -342,8 +342,8 @@ height: 20vh;
   left: 50%;
   transform: translate(-50%, -50%); 
   border-radius: 25px; 
-  width: 840px; 
-  height: 480px; 
+  width: 940px; 
+  height: 580px; 
   border: 5px solid white;
 }#part3ColLeftKirbyVideoPlayBtn{
   position: absolute;
@@ -353,7 +353,7 @@ height: 20vh;
   border-radius: 50%; 
   width: 290px; 
   height: 290px; 
-  z-index: 2;
+  z-index: 4;
   opacity: 0.9;
   background-color: rgb(255, 255, 255);
   cursor:grab;
@@ -405,17 +405,15 @@ height: 20vh;
   font-size: var(--fs-md);
   background: linear-gradient(90deg, #FFFF, #F2F2F2);
   padding: 25px;
-    position: relative;
   min-height: 5vh;
   overflow: hidden;
   align-items: center;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  position: relative;
-  border-bottom: 5px solid #cacaca6d;
+  border-bottom: 2px solid #fcba4758;
+  margin-bottom: 5px;;
 }#part3Row3ColLeftCustomContainerInfo{
   font-size: var(--fs-md);
-  margin-top: -15px;
   background: linear-gradient(90deg, #FFFF, #F2F2F2);
   padding: 25px;
   border-radius: 25px;
@@ -463,7 +461,7 @@ height: 20vh;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1640px) {
   /* Adjust sizes for larger screens (1440p) */
   .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video {
     width: 440px; 
@@ -479,17 +477,29 @@ height: 20vh;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1640px) and (max-width: 2160px){
   /* Adjust sizes for very large screens (4k+) */
   .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video{
-    width: 640px; 
-    height: 365px;
+    width: 660px; 
+    height: 380px;
   }
   
   #part3ColLeftKirbyVideoPlayBtn {
     width: 220px; 
     height: 220px; 
   }
+}
+  @media (min-width: 2160px) {
+    /* Adjust sizes for very large screens (4k+) */
+    .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video{
+      width: 840px; 
+      height: 480px;
+    }
+    
+    #part3ColLeftKirbyVideoPlayBtn {
+      width: 220px; 
+      height: 220px; 
+    }
 }
 
 
@@ -646,15 +656,20 @@ height: 20vh;
 }
 
 .canvas-contBubbles {
-  z-index: 1;
+  z-index: 0;
   position: absolute; 
   width: 100vw;
   min-height: 100vh;
-  z-index: 1; /* Place it on top of other elements */
 } #bubblesCanvas {
   opacity: 0.8;
 }
 
+.canvas-Fireworks {
+  z-index: 0;
+  position: absolute; 
+  width: 100vw;
+  height: 100%;
+}
 
 
 /****************************/
