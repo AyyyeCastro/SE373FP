@@ -428,16 +428,14 @@ height: 20vh;
   font-weight: 600;
   text-align: center;
 }
-#kirbDescription{
 
-}
 
 
 
 
 @media (max-width: 768px) {
   /* Adjust sizes for smaller screens (720p and below) */
-  .part3ColLeftKirbyVideo video {
+  .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video {
     width: 341px; /* Adjust width and height as needed */
     height: 195px;
   }
@@ -445,23 +443,15 @@ height: 20vh;
     width: 140px;
     height: 140px;
   }
-  #part3ColLeft{
+  #part2ColLeft, #part2Row2ColLeft, #part3ColRight, #part3Row2ColRight, #part3Row3ColRight, #part3row3ColLeftPurpleStar, .canvas-contBubbles, .canvas-cont {
     display: none;
   }
-  .canvas-cont{
-    display: none;
-  }
-  .canvas-contBubbles{
-    display: none;
-  }
-  #part3row3ColLeftPurpleStar{
-    display: none;
-  }
+  
 }
-
+  
 @media (min-width: 768px) and (max-width: 1024px) {
   /* Adjust sizes for medium screens (1080p) */
-  .part3ColLeftKirbyVideo video {
+  .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video {
     width: 341px; /* Adjust width and height as needed */
     height: 195px;
   }
@@ -469,17 +459,14 @@ height: 20vh;
     width: 140px;
     height: 140px;
   }
-  #part3ColLeft{
-    display: none;
-  }
-  #part3row3ColLeftPurpleStar{
+  #part2ColLeft, #part2Row2ColLeft, #part3ColRight, #part3Row2ColRight, #part3Row3ColRight, #part3row3ColLeftPurpleStar {
     display: none;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
   /* Adjust sizes for larger screens (1440p) */
-  .part3ColLeftKirbyVideo video {
+  .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video {
     width: 440px; /* Adjust width and height as needed */
     height: 250px;
   }
@@ -488,17 +475,14 @@ height: 20vh;
     width: 240px;
     height: 240px;
   }
-  #part3ColLeft{
-    display: none;
-  }
-  #part3row3ColLeftPurpleStar{
+  #part2ColLeft, #part2Row2ColLeft, #part3ColRight, #part3Row2ColRight, #part3Row3ColRight, #part3row3ColLeftPurpleStar {
     display: none;
   }
 }
 
 @media (min-width: 1440px) {
   /* Adjust sizes for very large screens (4k+) */
-  .part3ColLeftKirbyVideo video {
+  .part3ColLeftKirbyVideo video, .part4ColLeftKirbyVideo video{
     width: 640px; /* Adjust width and height as needed */
     height: 365px;
   }
@@ -514,14 +498,134 @@ height: 20vh;
 /* ALL FOR PART4 ******** ***************/
 
 #part4{
-  margin: 0;
+  margin-top: -100px;;
   padding: 0;
-  height: 120vh;
-  background-color: purple;
+  min-height: 100vh;
+  border-radius: 25px;
+  background-color: #F2F2F2;
   margin-top: -100px;
+  border-radius: 25px;
+}#part4Row1{
+  min-height: 20vh;
+  border-radius: 25px;
+  padding-top: 55px;
+  padding-left: 55px;
+  padding-right: 55px;
+}#part4Row1ColRight{
+  position: relative;
+  border: 1px solid #4b4b4b8f;
+  box-shadow: 15px 15px 25px #4b4b4b8f;
+  padding: 55px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background:  linear-gradient(-90deg, #FF7DB3, #FF0089);
+  color: white;
+}#part4Row1ColLeft{
+  position: relative;
+  border-bottom: 1px solid #4b4b4b8f;
+  box-shadow: 15px 15px 25px #4b4b4b8f;
+  padding: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background:  linear-gradient(90deg, #FF7DB3, #FF0089);
+  color: white;
+}#part4Row2{
+  margin-top: -15px;
+  border-radius: 25px;
+  padding-left: 55px;
+  padding-right: 55px;
+  min-height: 75vh;
+  overflow: hidden;
+}#part4Row2ColRight{
+  padding: 155px;
+  background:  linear-gradient(25deg, #FEF594, #FBE439);
+  border-bottom-right-radius: 25px;
+}#part4Row2ColLeft{
+  padding: 55px;
+  background:  linear-gradient(-25deg, #FEF594, #FBE439);
+  border-bottom-left-radius: 25px;
+}.part4ColLeftKirbyVideo {
+  left: 0%;
+  height: 100%;
+  position: relative; /* Needed for child element positioning */
+  padding: 20px;
+   /* Clip overflowing content */
+}.part4ColLeftKirbyVideo video {
+  box-shadow: 25px 25px 35px #4b4b4b8f;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the video */
+  border-radius: 25px; /* Make the video element circular */
+  width: 840px; /* Adjust width and height as needed */
+  height: 480px; /* Adjust width and height as needed */
+  border: 5px solid white;
+}#featureParent {
+  box-shadow: 25px 25px 35px #4b4b4b8f;
+  height: 100%;
+  color: white;
+  background-color: #58C2B6;
+  padding: 25px;
   border-radius: 25px;
 }
 
+#featureParent h1 {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: #FEF594;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #ff7db386;
+}
+
+#kirbyStill,
+#elfilinStill,
+#bandanaStill {
+  height: 175px;
+  width: 175px;
+}
+
+@media (max-width: 768px) {
+  #kirbyStill, #elfilinStill, #bandanaStill{
+    height: 85px;
+    width: 85px;
+  }
+}
+  
+@media (min-width: 768px) and (max-width: 1024px) {
+  #kirbyStill, #elfilinStill, #bandanaStill{
+    height: 95px;
+    width: 95px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  #kirbyStill, #elfilinStill, #bandanaStill{
+    height: 115px;
+    width: 115px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #kirbyStill, #elfilinStill, #bandanaStill{
+    height: 175px;
+    width: 175px;
+  }
+}
+
+
+#CustomFooter{
+  position: relative;
+  margin-top: -100px;
+  padding: 155px;
+  height: 50vh;
+  background-color: #58C2B6;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: white;
+  font-size: var(--fs-lg);
+  text-align: center;
+}
 
 .canvas-cont {
   position: fixed;
