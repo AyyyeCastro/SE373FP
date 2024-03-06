@@ -421,6 +421,48 @@ let currentImageIndex = 0;
                
   // Show the first image initially
   showImage(currentImageIndex);
+
+  function animateIn(image) {
+  gsap.fromTo(image, {
+    opacity: 0,
+    x: -50 // Start off-screen to the left
+  }, {
+    opacity: 1,
+    x: 0, // Slide in from the left
+    duration: 0.1 // Animation duration 0.5 seconds
+  });
+}
+
+// Function to animate the image out
+function animateOut(image) {
+  gsap.to(image, {
+    opacity: 0,
+    x: 50, // Slide out to the right
+    duration: 0.1, // Animation duration 0.5 seconds
+    onComplete: () => {
+      image.classList.remove('active'); // Remove the 'active' class after the animation completes
+    }
+  });
+}
+
+function showImage(index) {
+  images.forEach(image => {
+    if (image.classList.contains('active')) {
+      animateOut(image); // Animate out the currently active image
+    }
+  });
+
+  images[index].classList.add('active');
+  animateIn(images[index]); // Animate in the new active image
+
+  // Update the info based on the active image
+  const activeImageId = images[index].id;
+  const kirbyDescText = document.getElementById('kirbyDescription');
+  kirbyDescText.textContent = kirbyDescription[activeImageId] || "Kirby list empty.";
+  const KirbyNameText = document.getElementById('kirbyName');
+  KirbyNameText.textContent = kirbyName[activeImageId] || "Kirby list empty.";
+}
+
 </script>
 
 <script type="module">
