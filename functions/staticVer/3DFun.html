@@ -34,18 +34,17 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>W3 aCastro</title>
+      <title>Kirby Feature</title> <!-- Made by Andrew Castro. Kirby Copyrights property of Nintendo. This was just a fun school project. Nothing commercial!!-->
    </head>
    <body>
 
   <!-- DISCLAIMER: ALL KIRBY COPY RIGHTS PROPERTY OF NINTENDO. THIS IS PURELY MADE FOR A FUN SCHOOL PROJECT. -->
    <div class="container-fluid" id="part1">
     <nav class="myNavBar">
-      <a class="" href="#">Home</a>
-      <a class="" href="#">Task List</a>
-      <a class="" href="#">How To</a>
+      <a class="" href="index.html">Home</a>
+      <a class="" href="/taskView">Task List</a>
       </nav>
-    <canvas id="kirbyTextCanvas"></canvas>
+      <canvas id="kirbyTextCanvas"></canvas>
       <div class="canvas-cont">
          <canvas id="kirbyModeCanvas"></canvas>
        </div>
@@ -172,7 +171,7 @@
   </div>
 
   <div class="container-fluid" id="customFooter">
-    <div class="row">
+    <div class="row" id="customFooterText">
       <div class="col-sm">
        Andrew Castro
       </div>
@@ -180,7 +179,7 @@
         SE373 Final Project
       </div>
       <div class="col-sm">
-        All properties of Kirby are copyright of Nintendo. Please don't sue me.
+        All properties of Kirby are copyright of Nintendo. This is just a school project.
       </div>
     </div>
   </div>
@@ -458,12 +457,110 @@ import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
         start: "top 100%",
         end: "bottom bottom",
         scrub: true,
-        onEnter: () => rotateGroup.resume(), // Resume the animation when entering #part1
-        onLeave: () => rotateGroup.pause(), // Pause the animation when leaving #part1
-        onEnterBack: () => rotateGroup.resume(), // Resume the animation when scrolling back into #part1
-        onLeaveBack: () => rotateGroup.pause() // Pause the animation when scrolling past the top of #part1
+        onEnter: () => rotateGroup.resume(),
+        onLeave: () => rotateGroup.pause(),
+        onEnterBack: () => rotateGroup.resume(), 
+        onLeaveBack: () => rotateGroup.pause() 
       }
     });
   })
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+// Create the ScrollTrigger for the first video
+let triggerVideoFeature1 = ScrollTrigger.create({
+  trigger: "#part2Row1ColRight",
+  start: "top bottom", // Trigger animation when top of part2Row1ColRight reaches bottom of viewport
+  end: "bottom bottom",   // Animation ends when bottom of part2Row1ColRight reaches top of viewport
+  onEnter: () => {
+    // Animate the first video
+    gsap.fromTo(".part2ColRightKirbyVideo", {
+      scale: 0, // Start at scale 0 (collapsed)
+      opacity: 0, // Start at opacity 0 (invisible)
+    }, {
+      scale: 1, // Zoom into view
+      opacity: 1, // End at opacity 1 (visible)
+      duration: 1.6, // Animation duration 1 second
+      ease: "power3.outIn", // Ease function for smooth animation
+    });
+  }
+});
+
+// Create the ScrollTrigger for the second video
+let triggerVideoFeature2 = ScrollTrigger.create({
+  trigger: "#part3Row2ColLeft",
+  start: "top bottom",  
+  end: "bottom bottom",   //when bottom hits top of vp
+  onEnter: () => {
+    gsap.fromTo(".part3ColLeftKirbyVideo", {
+      scale: 0, // Start at scale 0 (collapsed)
+      opacity: 0, // Start at opacity 0 (invisible)
+    }, {
+      scale: 1, // Zoom into view
+      opacity: 1, // End at opacity 1 (visible)
+      duration: 1.6, // Animation duration 1 second
+      ease: "power3.outIn", // Ease function for smooth animation
+    });
+  }
+});
+
+let triggerKirbyInfo = ScrollTrigger.create({
+    trigger: "#part3Row3",
+    start: "top bottom",  
+    end: "bottom bottom",   //when bottom hits top of vp
+    onEnter: () => {
+      gsap.fromTo("#part3Row3ColLeftCustomContainerInfo", {
+        scale: 0, // Start at scale 0 (collapsed)
+        opacity: 0, // Start at opacity 0 (invisible)
+      }, {
+        scale: 1, // Zoom into view
+        opacity: 1, // End at opacity 1 (visible)
+        duration: 1.6, // Animation duration 1 second
+        ease: "power3.outIn", // Ease function for smooth animation
+      });
+    }
+  });
+
+  let triggerVideoFeature3 = ScrollTrigger.create({
+    trigger: "#part4Row1ColLeft",
+    start: "top bottom",  
+    end: "bottom bottom",   //when bottom hits top of vp
+    onEnter: () => {
+      gsap.fromTo(".part4ColLeftKirbyVideo", {
+        scale: 0, // Start at scale 0 (collapsed)
+        opacity: 0, // Start at opacity 0 (invisible)
+      }, {
+        scale: 1, // Zoom into view
+        opacity: 1, // End at opacity 1 (visible)
+        duration: 1.6, // Animation duration 1 second
+        ease: "power3.outIn", // Ease function for smooth animation
+      });
+    }
+  });
+
+    // Create the ScrollTrigger for the third video
+    let triggerKirbyStars = ScrollTrigger.create({
+    trigger: "#part4Row1ColLeft",
+    start: "top bottom",  
+    end: "bottom bottom",   //when bottom hits top of vp
+    onEnter: () => {
+      gsap.fromTo("#featureParent", {
+        x: window.innerWidth, // Start off-screen to the right
+        opacity: 0, // Start at opacity 0 (invisible)
+      }, {
+        x: 0, // Slide in to the left
+        opacity: 1, // End at opacity 1 (visible)
+        duration: 1.6, // Animation duration 1.3 seconds
+        ease: "power3.outIn", // Ease function for smooth animation
+      });
+    }
+  });
+
+});
+
+
 
 </script>

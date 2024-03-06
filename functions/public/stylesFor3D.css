@@ -29,6 +29,7 @@
     }
   }
   body, html {
+    overflow-x: hidden;
     font-size: var( --fs-md);
     font-family: "Sniglet", system-ui;
     font-weight: 400;
@@ -175,10 +176,11 @@ height: 20vh;
   top: 50%;
   left: 0%;
   position: relative; 
+  opacity: 0;
 
-}.part2ColRightKirbyVideo video {
+}#kirbyVideoSource {
   box-shadow: 25px 25px 35px #4b4b4b8f;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -196,13 +198,13 @@ height: 20vh;
   border-radius: 50%; 
   width: 290px; 
   height: 290px; 
-  z-index: 2;
+  z-index: 3;
   opacity: 0.9;
   background-color: rgb(255, 255, 255);
   cursor:grab;
 }
 @media (max-width: 768px) {
-  .part2ColRightKirbyVideo video {
+  #kirbyVideoSource {
     width: 280px;
     height: 280px;
   }
@@ -225,7 +227,7 @@ height: 20vh;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .part2ColRightKirbyVideo video {
+  #kirbyVideoSource {
     width: 340px;
     height: 340px;
   }
@@ -242,7 +244,7 @@ height: 20vh;
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
-  .part2ColRightKirbyVideo video {
+  #kirbyVideoSource {
     width: 520px;
     height: 520px;
   }
@@ -260,7 +262,7 @@ height: 20vh;
 }
 
 @media (min-width: 1440px) {
-  .part2ColRightKirbyVideo video {
+  #kirbyVideoSource {
     width: 680px;
     height: 680px;
   }
@@ -614,14 +616,20 @@ height: 20vh;
   background-color: #58C2B6;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  color: white;
   font-size: var(--fs-lg);
   text-align: center;
+}
+#customFooterText{
+  background: linear-gradient(90deg, #FFFF, #F2F2F2);
+  border-radius: 25px;
+  text-align: center;
+  padding: 25px;
+  align-items: center;
 }
 
 .canvas-cont {
   position: fixed;
-  z-index: 4;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100vw;
@@ -633,7 +641,7 @@ height: 20vh;
 }
 
 .canvas-contBubbles {
-  z-index: 3;
+  z-index: 1;
   position: absolute; 
   width: 100vw;
   min-height: 100vh;

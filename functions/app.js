@@ -130,7 +130,16 @@ app.post("/taskView/:id/complete", async (req, res) => {
 app.post("/taskView/:id/favorite", async (req, res) => {
   try {
     const { id } = req.params;
-    const updateTask = { taskFavorite: "yes" }; // Update taskComplete to true
+
+    // Get current favorite status
+    const currentTask = await Task.findById(id);
+    const isCurrentlyFavorite = currentTask.taskFavorite === "yes";
+
+    // Update taskFavorite based on current status
+    const updateTask = {
+      taskFavorite: isCurrentlyFavorite ? "no" : "yes",
+    };
+
     await Task.findByIdAndUpdate(id, updateTask, { new: "yes" });
     res.redirect("/taskView");
   } catch (err) {
