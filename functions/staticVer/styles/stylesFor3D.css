@@ -39,6 +39,48 @@
     padding: 0;
   }  
 
+  #load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack the children vertically */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 5;
+    position: absolute;
+    font-size: var(--fs-xl);
+    background-color: #f2f2f2;
+    background-image: url(/functions/public/kirbyBG.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: none;
+    padding: 25px;
+  }#loadingText {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
+    background-color: #FF7DB3;
+    border-radius: 25px;
+    opacity: 0.8;
+  }#spinner {
+    border: 16px solid #f2f2f2; 
+    border-top: 16px solid #FF7DB3; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-top: 15px;
+  }@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
   .swal2-modal {
     background:  linear-gradient(15deg, #FFFF, #f2f2f2);
     border: 15px solid #FF7DB3; 
@@ -67,7 +109,7 @@
     color: #fff; 
   }
 
-.myNavBar {
+/* .myNavBar {
   height: 35px;
   width: 100%;
   padding: 15px;
@@ -92,13 +134,12 @@
     content: "";
     display: table;
     clear: both;
-  }
+  } */
 
 
 #part1{
   overflow: hidden;
-  margin: 0;
-  padding: 15px;
+  width: 100%;
   height: 120vh;
   background-color: red;
   background-image: url(/functions/public/kirbyBG.jpg);
@@ -128,7 +169,7 @@ height: 20vh;
 #part2{
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding-bottom: 150px;
   min-height: 120vh;
   background:  linear-gradient(-25deg, #FEF594, #FBE439);
   border-radius: 25px;
@@ -140,6 +181,7 @@ height: 20vh;
   padding-left: 55px;
   padding-right: 55px;
 }#part2Row1ColRight{
+
   position: relative;
   border: 1px solid #4b4b4b8f;
   box-shadow: 15px 15px 25px #4b4b4b8f;
@@ -214,16 +256,7 @@ height: 20vh;
     width: 140px;
     height: 140px;
   }
-  #part2ColLeft{
-    display: none;
-  }
-  .canvas-cont{
-    display: none;
-  }
-  .canvas-contBubbles{
-    display: none;
-  }
-  #part2Row2ColLeftPurpleStar{
+  #part2ColLeft, .canvas-cont, .canvas-contBubbles, #part2Row2ColLeftPurpleStar{
     display: none;
   }
 }
@@ -309,7 +342,7 @@ height: 20vh;
   background:  linear-gradient(-90deg, #FF7DB3, #FF0089);
   color: white;
 }#part3Row2{
-  margin-top: -150px;
+  margin-top: -125px;
   border-radius: 25px;
   padding-left: 55px;
   padding-right: 55px;
@@ -338,7 +371,7 @@ height: 20vh;
   box-shadow: 25px 25px 35px #4b4b4b8f;
   z-index: 1;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%); 
   border-radius: 25px; 
@@ -347,7 +380,7 @@ height: 20vh;
   border: 5px solid white;
 }#part3ColLeftKirbyVideoPlayBtn{
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%); 
   border-radius: 50%; 
@@ -508,7 +541,6 @@ height: 20vh;
 
 #part4{
   overflow: hidden;
-  padding: 0;
   min-height: 100vh;
   border-radius: 25px;
   background-color: #F2F2F2;
@@ -546,13 +578,17 @@ height: 20vh;
   min-height: 75vh;
   overflow: hidden;
 }#part4Row2ColRight{
-  padding: 155px;
+  padding-top: 130px;
+  min-height: 20vh;
   background:  linear-gradient(25deg, #FEF594, #FBE439);
   border-bottom-right-radius: 25px;
+  padding-bottom: 160px;
 }#part4Row2ColLeft{
+  min-height: 20vh;
   padding: 55px;
   background:  linear-gradient(-25deg, #FEF594, #FBE439);
   border-bottom-left-radius: 25px;
+  padding-bottom: 160px;
 }.part4ColLeftKirbyVideo {
   left: 0%;
   height: 100%;
@@ -566,12 +602,10 @@ height: 20vh;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 25px; 
-  width: 840px; 
-  height: 480px; 
   border: 5px solid white;
 }#featureParent {
+  position: relative;
   box-shadow: 25px 25px 35px #4b4b4b8f;
-  height: 100%;
   color: white;
   background-color: #58C2B6;
   padding: 25px;
@@ -579,6 +613,7 @@ height: 20vh;
 }
 
 #featureParent h1 {
+  padding: 25px;
   font-size: var(--fs-lg);
   font-weight: 800;
   color: #FEF594;
@@ -586,12 +621,7 @@ height: 20vh;
   -webkit-text-stroke-color: #ff7db386;
 }
 
-#kirbyStill,
-#elfilinStill,
-#bandanaStill {
-  height: 175px;
-  width: 175px;
-}
+
 
 @media (max-width: 768px) {
   #kirbyStill, #elfilinStill, #bandanaStill{
@@ -631,7 +661,7 @@ height: 20vh;
   background-color: #58C2B6;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-sm);
   text-align: center;
 }
 #customFooterText{
@@ -672,4 +702,3 @@ height: 20vh;
 }
 
 
-/****************************/

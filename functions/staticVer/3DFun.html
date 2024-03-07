@@ -26,10 +26,18 @@
       <title>Kirby Feature</title> <!-- Made by Andrew Castro. Kirby Copyrights property of Nintendo. This was just a fun school project. Nothing commercial!!-->
    </head>
    <body>
+
+      <div id="load" class="container-fluid">         
+         <div id="loadingText">
+               Loading 
+            <div id="spinner"></div>
+         </div>
+     </div>
+
       <div class="container-fluid" id="part1">
-         <nav class="myNavBar">
+         <!-- <nav class="myNavBar">
             <a class="" href="index.html">Home</a>
-         </nav>
+         </nav> -->
          <canvas id="kirbyTextCanvas"></canvas>
          <div class="canvas-cont">
             <canvas id="kirbyModeCanvas"></canvas>
@@ -111,37 +119,37 @@
       </div>
       <div class="container-fluid" id="part4">
          <div class="row" id="part4Row1">
-            <div class="col-sm-6" id="part4Row1ColLeft">
+            <div class="col-lg-6" id="part4Row1ColLeft">
                <h1>Evolved Copy Abilities</h1>
                <p>All 12 Copy Abilities can evolve into more powerful versions—here are a few examples!</p>
             </div>
-            <div class="col-sm-6" id="part4Row1ColRight">
+            <div class="col-lg-6" id="part4Row1ColRight">
                <h1>And meet the stars of the show!</h1>
                <p>Meet the friends—and the foes—of this epic tale!</p>
             </div>
          </div>
          <div class="row" id="part4Row2">
-            <div class="col-md-6" id="part4Row2ColLeft">
+            <div class="col-lg-6" id="part4Row2ColLeft">
                <div class="part4ColLeftKirbyVideo">
                   <video autoplay muted loop id="kirbyVideoSource3">
                      <source src="/functions/public/kirbyElementsLoop.mp4" type="video/mp4">
                   </video>
                </div>
             </div>
-            <div class="col-md-6" id="part4Row2ColRight">
+            <div class="col-lg-6" id="part4Row2ColRight">
                <div id="featureParent" class="container">
                   <div class="row">
-                     <div id="kirbyStar" class="col-md-4">
+                     <div id="kirbyStar" class="col-lg-4">
                         <h1>Kirby</h1>
                         <p>A pink and powerful puffball, Kirby can inhale certain enemies and copy their abilities to unleash on others.</p>
                         <img src="/functions/public/kirbyStillImage.png" alt="Image 1" id="kirbyStill" class="img-fluid">
                      </div>
-                     <div id="elfilinStar" class="col-md-4">
+                     <div id="elfilinStar" class="col-lg-4">
                         <h1>Elfilin</h1>
                         <p>After being rescued by Kirby, this mysterious flying creature teams up with our hero to rescue the Waddle Dees.</p>
                         <img src="/functions/public/elfilinStill.png" alt="Image 2" id="elfilinStill" class="img-fluid">
                      </div>
-                     <div id="bandanaStar" class="col-md-4">
+                     <div id="bandanaStar" class="col-lg-4">
                         <h1>Bandana Waddle Dee</h1>
                         <p>Kirby’s battling buddy who joins the action in 2-player co-op play.</p>
                         <img src="/functions/public/bandanaStill.png" alt="Image 3" id="bandanaStill" class="img-fluid">
